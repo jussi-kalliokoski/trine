@@ -31,7 +31,15 @@
  * [["x", "y"], ["z", "n"]]::to(Map) // returns Map { "x": "y", "z": "n" }
  * ```
 */
-export function * to <iT, rT> (
+export function to <iT, rT> (
     Type : Function,
 ) : rT {
+    if ( Type === Array ) {
+        return [...this];
+    } else if ( Type === Object ) {
+        return [...this].reduce((accumulation, entry) =>
+            ({ ...accumulation, [entry[0]]: entry[1] }), {});
+    } else {
+        return new Type([...this]);
+    }
 };
