@@ -13,4 +13,5 @@
 export function add (
     b : number,
 ) : number {
+    return this + b;
 };
