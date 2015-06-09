@@ -28,6 +28,7 @@
     "mocha": "^2.2.5",
     "node-babel": "^0.1.2",
     "sinon": "^1.14.1",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "source-map-support": "^0.3.1"
   }
 }
