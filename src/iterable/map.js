@@ -17,6 +17,9 @@
  * ```
 */
 export function * map <iT, rT> (
-    transformer : () => rT,
+    transformer : (_this : iT) => rT,
 ) : Iterable<rT> {
+    for ( const item of this ) {
+        yield item::transformer();
+    }
 };
