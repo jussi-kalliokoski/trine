@@ -13,4 +13,5 @@
 export function div (
     b : number,
 ) : number {
+    return this / b;
 };
