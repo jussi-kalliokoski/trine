@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the negation of the boolean.
  *
+ * @this {boolean} The boolean to negate.
  * @example Basic Usage
  *
  * ```javascript
@@ -11,5 +12,6 @@
  * ```
 */
 export function not (
+
 ) {
 };

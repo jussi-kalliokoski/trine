@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the items of the iterator sorted by a given comparator.
  *
+ * @this {Iterable<T>}
  * @ntime Engine-specific
  * @dspace Engine-specific
  * @example Basic Usage
@@ -12,6 +13,7 @@
  * "cba"::sortAlphabetically() // yields "a", "b", "c"
  * ```
 */
-export function sortAlphabetically (
+export function * sortAlphabetically <T> (
+
 ) {
 };

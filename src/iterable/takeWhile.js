@@ -1,8 +1,10 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the items until an item that matches the condition is found.
  *
+ * @this {Iterable<T>}
+ * @param condition A condition called on every item to see if it should be taken.
  * @ntime O(n)
  * @dspace O(1)
  * @example Basic Usage
@@ -13,6 +15,7 @@
  * }) // yields 1, 2, 3
  * ```
 */
-export function takeWhile (
+export function * takeWhile <T> (
+    condition : (item : T) => boolean,
 ) {
 };

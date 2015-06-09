@@ -1,19 +1,23 @@
-"use strict"
+"use strict";
 
 /**
  * Returns a version of the function that has given parameters prefilled and passes given parameters through to the original, denoted by placeholders.
  *
- * @example Unary <code>parseInt</code>
+ * @this {T}
+ * @param ...staticParams The prefilled parameters.
+ * @example Unary `parseInt`
  *
  * ```javascript
  * parseInt
  * ```
+
  *
- * @example Hexadecimal <code>parseInt</code>
+ * @example Hexadecimal `parseInt`
  *
  * ```javascript
  * parseInt
  * ```
+
  *
  * @example Fill Only the Second Argument
  *
@@ -24,6 +28,7 @@
  *
  * foo::partial(_, 2, ___)(1, 3, 4) // logs "1 2 3 4"
  * ```
+
  *
  * @example Fill Only the Second Last Argument
  *
@@ -34,6 +39,7 @@
  *
  * foo::partial(___, 3, _)(1, 2, 4) // logs "1 2 3 4"
  * ```
+
  *
  * @example Compose a Prototype Method
  *
@@ -42,6 +48,7 @@
  * [1, 2, 3, 4]::slice1() // [2, 3, 4]
  * ```
 */
-export function partial (
+export function partial <T> (
+    ...staticParams : any,
 ) {
 };

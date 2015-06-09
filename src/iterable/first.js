@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the k-th item of the iterator.
  *
+ * @this {Iterable<T>}
  * @ntime O(k)
  * @dspace O(1)
  * @example Basic Usage
@@ -14,6 +15,7 @@
  * [1,2,3]::first(3) // yields nothing
  * ```
 */
-export function first (
+export function * first <T> (
+    k : number,
 ) {
 };

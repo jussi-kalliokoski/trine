@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the value of the property by given key.
  *
+ * @this {any}
  * @example Basic Usage
  *
  * ```javascript
@@ -10,5 +11,6 @@
  * ```
 */
 export function prop (
+    key : string,
 ) {
 };

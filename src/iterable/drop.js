@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the items that don't qualify the condition.
  *
+ * @this {Iterable<T>}
  * @ntime O(n)
  * @dspace O(1)
  * @example Basic Usage
@@ -13,6 +14,7 @@
  * }) // yields 1, 3
  * ```
 */
-export function drop (
+export function * drop <T> (
+    condition : () => boolean,
 ) {
 };

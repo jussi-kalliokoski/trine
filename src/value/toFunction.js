@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns a function that always returns the given value.
  *
+ * @this {any} The value the function should return.
  * @example Basic Usage
  *
  * ```javascript
@@ -12,5 +13,6 @@
  * ```
 */
 export function toFunction (
+
 ) {
 };

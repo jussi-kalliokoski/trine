@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the k last items of the iterator.
  *
+ * @this {Iterable<T>}
  * @ntime O(n)
  * @dspace O(k)
  * @example Basic Usage
@@ -14,6 +15,7 @@
  * [1,2,3]::tail(4) // yields 1, 2, 3
  * ```
 */
-export function tail (
+export function * tail <T> (
+    k : number,
 ) {
 };

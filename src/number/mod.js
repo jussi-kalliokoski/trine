@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the modulo of two numbers.
  *
+ * @this {number}
  * @example Basic Usage
  *
  * ```javascript
@@ -12,5 +13,6 @@
  * ```
 */
 export function mod (
+    b : number,
 ) {
 };

@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the division of two numbers.
  *
+ * @this {number}
  * @example Basic Usage
  *
  * ```javascript
@@ -10,5 +11,6 @@
  * ```
 */
 export function div (
+    b : number,
 ) {
 };

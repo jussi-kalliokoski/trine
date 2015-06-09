@@ -1,8 +1,10 @@
-"use strict"
+"use strict";
 
 /**
  * Unwraps the iterator into a collection.
  *
+ * @this {Iterable<iT>}
+ * @param Type The constructor for the collection type.
  * @example Arrays
  *
  * ```javascript
@@ -10,6 +12,7 @@
  *   return this * 2;
  * })::to(Array) // returns [2, 4, 6]
  * ```
+
  *
  * @example Objects
  *
@@ -18,6 +21,7 @@
  *   return [this.id, this];
  * })::to(Object); // returns { a: { id: "a" }, b: { id: "b"} }
  * ```
+
  *
  * @example Other Collections
  *
@@ -27,6 +31,7 @@
  * [["x", "y"], ["z", "n"]]::to(Map) // returns Map { "x": "y", "z": "n" }
  * ```
 */
-export function to (
+export function * to <iT, rT> (
+    Type : Function,
 ) {
 };

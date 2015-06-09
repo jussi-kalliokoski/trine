@@ -1,8 +1,10 @@
-"use strict"
+"use strict";
 
 /**
  * Returns true if both operands are true.
  *
+ * @this {boolean} Left boolean operand.
+ * @param right Right boolean operand.
  * @example Basic Usage
  *
  * ```javascript
@@ -13,5 +15,6 @@
  * ```
 */
 export function and (
+    right : boolean,
 ) {
 };

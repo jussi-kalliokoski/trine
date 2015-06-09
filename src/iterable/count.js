@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the number of items in the iterator.
  *
+ * @this {Iterable<any>}
  * @ntime O(n)
  * @dspace O(1)
  * @example Basic Usage
@@ -11,6 +12,7 @@
  * [1,2,3]::count() // yields 3
  * ```
 */
-export function count (
+export function * count (
+
 ) {
 };

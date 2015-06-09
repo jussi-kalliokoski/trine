@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the n-th power of the number.
  *
+ * @this {number}
  * @example Basic Usage
  *
  * ```javascript
@@ -13,5 +14,6 @@
  * ```
 */
 export function pow (
+    n : number,
 ) {
 };

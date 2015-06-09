@@ -1,8 +1,10 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the items that qualify the condition.
  *
+ * @this {Iterable<T>}
+ * @param condition A condition function to see if the item should be taken.
  * @ntime O(n)
  * @dspace O(1)
  * @example Basic Usage
@@ -14,6 +16,7 @@
  *   }) // yields 2 and 4
  * ```
 */
-export function take (
+export function * take <T> (
+    condition : () => boolean,
 ) {
 };

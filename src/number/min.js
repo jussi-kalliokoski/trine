@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the smaller of two numbers.
  *
+ * @this {number}
  * @example Basic Usage
  *
  * ```javascript
@@ -11,5 +12,6 @@
  * ```
 */
 export function min (
+    b : number,
 ) {
 };

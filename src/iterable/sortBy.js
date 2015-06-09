@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the items of the iterator sorted based on score of the item returned by the transformer.
  *
+ * @this {Iterable<T>}
  * @ntime Algorithm dependent
  * @dspace Algorithm dependent
  * @example Basic Usage
@@ -15,6 +16,7 @@
  * }]::sortBy(function () { return this.value; }) // yields { value: 1 }, { value: 2 }
  * ```
 */
-export function sortBy (
+export function * sortBy <T> (
+    transformer : () => number,
 ) {
 };

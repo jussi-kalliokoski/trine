@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Forks the iterator and yields the forks.
  *
+ * @this {Iterable<T>}
  * @example Basic Usage
  *
  * ```javascript
@@ -14,6 +15,7 @@
  * [...b] // [1,2,3]
  * ```
 */
-export function fork (
+export function * fork <T> (
+
 ) {
 };

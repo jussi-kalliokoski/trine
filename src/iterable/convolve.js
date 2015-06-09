@@ -1,9 +1,10 @@
-"use strict"
+"use strict";
 
 /**
- * Maps the iterator with the additional tail of <code>k</code> previous items.
- * <code>k</code> is determined by the number of items in the accumulation iterator.
+ * Maps the iterator with the additional tail of `k` previous items.
+ * `k` is determined by the number of items in the accumulation iterator.
  *
+ * @this {Iterable<T>}
  * @ntime O(n)
  * @dspace O(k)
  * @example Basic Usage
@@ -14,6 +15,8 @@
  * }, [0, -1]) // yields 0, 3, 6
  * ```
 */
-export function convolve (
+export function * convolve (
+    accumulator : (accumulation : rT, item : iT) => rT,
+    tail : Iterable<iT>,
 ) {
 };

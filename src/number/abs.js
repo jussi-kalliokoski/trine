@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Returns the absolute value of the number.
  *
+ * @this {number}
  * @example Basic Usage
  *
  * ```javascript
@@ -12,5 +13,6 @@
  * ```
 */
 export function abs (
+
 ) {
 };

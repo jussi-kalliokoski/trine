@@ -1,8 +1,9 @@
-"use strict"
+"use strict";
 
 /**
  * Yields the first item that qualifies the condition.
  *
+ * @this {Iterable<T>}
  * @ntime O(n)
  * @dspace O(1)
  * @example Basic Usage
@@ -13,6 +14,7 @@
  * }) // yields { id: 3, x: 2 }
  * ```
 */
-export function find (
+export function * find <T> (
+    condition : () => boolean,
 ) {
 };
