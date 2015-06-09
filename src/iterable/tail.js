@@ -18,4 +18,13 @@
 export function * tail <T> (
     k : number,
 ) : Iterable<T> {
+    let buffer = [];
+
+    for ( const item of this ) {
+        buffer = buffer
+            .concat([item])
+            .slice(-k);
+    }
+
+    yield * buffer;
 };
