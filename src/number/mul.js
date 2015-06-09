@@ -15,4 +15,5 @@
 export function mul (
     b : number,
 ) : number {
+    return this * b;
 };
