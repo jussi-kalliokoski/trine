@@ -17,7 +17,13 @@
  * ```
 */
 export function * aggregate <rT, iT> (
-    accumulator : (accumulation : rT, item : iT) => rT,
+    accumulator : (_this : rT, item : iT) => rT,
     accumulation : rT,
 ) {
+    for ( const item of this ) {
+        yield accumulation;
+        accumulation = accumulation::accumulator(item);
+    }
+
+    yield accumulation;
 };
