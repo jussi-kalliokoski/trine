@@ -17,6 +17,9 @@
  * ```
 */
 export function * take <T> (
-    condition : () => boolean,
+    condition : (_this : T) => boolean,
 ) : Iterable<T> {
+    for ( const item of this ) {
+        if ( item::condition() ) { yield item; }
+    }
 };
