@@ -17,4 +17,5 @@
 export function or (
     right : boolean,
 ) : boolean {
+    return this || right;
 };
