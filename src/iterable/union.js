@@ -17,6 +17,34 @@
 */
 export function * union <T> (
     b : Iterable<T>,
-    comparator : (item: T) => number,
+    comparator : (_this: T, b : T) => number,
 ) : Iterable<T> {
+    const iteratorA = this[Symbol.iterator]();
+    const iteratorB = b[Symbol.iterator]();
+    let stepA = iteratorA.next();
+    let stepB = iteratorB.next();
+
+    while ( !stepA.done && !stepB.done ) {
+        const comparison = stepA.value::comparator(stepB.value);
+
+        if ( comparison < 0 ) {
+            yield stepA.value;
+            stepA = iteratorA.next();
+        } else if ( comparison > 0 ) {
+            yield stepB.value;
+            stepB = iteratorB.next();
+        } else {
+            yield stepA.value;
+            stepA = iteratorA.next();
+            stepB = iteratorB.next();
+        }
+    }
+
+    if ( !stepA.done ) {
+        yield stepA.value;
+        yield * iteratorA;
+    } else if ( !stepB.done ) {
+        yield stepB.value;
+        yield * iteratorB;
+    }
 };
