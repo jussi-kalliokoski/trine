@@ -8,4 +8,5 @@
 export function cos (
 
 ) : number {
+    return Math.cos(this);
 };
