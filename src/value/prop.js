@@ -13,4 +13,5 @@
 export function prop (
     key : string,
 ) : any {
+    return this[key];
 };
