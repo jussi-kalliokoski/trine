@@ -14,4 +14,5 @@
 export function min (
     b : number,
 ) : number {
+    return Math.min(this, b);
 };
