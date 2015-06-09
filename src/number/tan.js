@@ -8,4 +8,5 @@
 export function tan (
 
 ) : number {
+    return Math.tan(this);
 };
