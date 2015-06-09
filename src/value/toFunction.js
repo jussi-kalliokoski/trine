@@ -3,7 +3,7 @@
 /**
  * Returns a function that always returns the given value.
  *
- * @this {any} The value the function should return.
+ * @this {T} The value the function should return.
  * @example Basic Usage
  *
  * ```javascript
@@ -12,7 +12,8 @@
  * fn() // returns 1
  * ```
 */
-export function toFunction (
+export function toFunction <T> (
 
-) : Function {
+) : (() => T) {
+    return () => this;
 };
