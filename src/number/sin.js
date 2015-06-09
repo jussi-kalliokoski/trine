@@ -8,4 +8,5 @@
 export function sin (
 
 ) : number {
+    return Math.sin(this);
 };
