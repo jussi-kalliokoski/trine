@@ -17,7 +17,7 @@
 */
 export function * intersection <T> (
     b : Iterable<T>,
-    comparator : (item: T) => number,
+    comparator : (_this: T, item: T) => number,
 ) : Iterable<T> {
     const iteratorA = this[Symbol.iterator]();
     const iteratorB = b[Symbol.iterator]();
