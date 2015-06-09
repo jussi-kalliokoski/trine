@@ -16,6 +16,14 @@
  * ```
 */
 export function * dropWhile <T> (
-    condition : () => boolean,
+    condition : (_this : T) => boolean,
 ) {
+    const iterator = this[Symbol.iterator]();
+
+    for ( const item of iterator ) {
+        if ( item::condition() ) { continue; }
+        yield item;
+    }
+
+    yield * iterator;
 };
