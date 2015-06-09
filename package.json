@@ -1,0 +1,33 @@
+{
+  "name": "trine",
+  "version": "0.0.0",
+  "description": "The library modern JS doesn't deserve, but needs right now.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "./scripts/build.bash",
+    "testsuite": "./scripts/testsuite.bash",
+    "test": "./scripts/test.bash",
+    "coveralls": "cat ./.tmp/coverage/lcov.info | COVERALLS_SERVICE_NAME=\"travis-ci\" coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jussi-kalliokoski/trine.git"
+  },
+  "author": "Jussi Kalliokoski <jussi.kallikoski@gmail.com> (http://juss.in)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jussi-kalliokoski/trine/issues"
+  },
+  "homepage": "https://github.com/jussi-kalliokoski/trine#readme",
+  "devDependencies": {
+    "babel": "^5.5.6",
+    "babel-runtime": "^5.5.6",
+    "chai": "^3.0.0",
+    "coveralls": "^2.11.2",
+    "isparta": "^3.0.3",
+    "mocha": "^2.2.5",
+    "node-babel": "^0.1.2",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.8.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "stage": 0,
+  "sourceMaps": true,
+  "optional": [
+    "runtime"
+  ],
+  "ignore": [
+    "node_modules/**/*"
+  ]
+}
