@@ -16,4 +16,5 @@
 export function * sortAlphabetically <T> (
 
 ) : Iterable<T> {
+    yield * [...this].sort();
 };
