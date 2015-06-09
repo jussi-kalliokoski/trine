@@ -18,4 +18,10 @@
 export function * head <T> (
     k : number,
 ) : Iterable<T> {
+    let index = 0;
+
+    for ( const item of this ) {
+        if ( index++ >= k ) { return; }
+        yield item;
+    }
 };
