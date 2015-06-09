@@ -15,4 +15,5 @@
 export function sub (
     b : number,
 ) : number {
+    return this - b;
 };
