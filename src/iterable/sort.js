@@ -13,6 +13,7 @@
  * ```
 */
 export function * sort <T> (
-    comparator : (b : T) => number,
+    comparator : (_this : T, b : T) => number,
 ) : Iterable<T> {
+    yield * [...this].sort((a, b) => a::comparator(b));
 };
