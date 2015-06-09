@@ -15,6 +15,9 @@
  * ```
 */
 export function * drop <T> (
-    condition : () => boolean,
+    condition : (_this : T) => boolean,
 ) {
+    for ( const item of this ) {
+        if ( !item::condition() ) { yield item; }
+    }
 };
