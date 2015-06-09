@@ -15,4 +15,5 @@
 export function abs (
 
 ) : number {
+    return Math.abs(this);
 };
