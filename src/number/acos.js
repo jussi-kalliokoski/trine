@@ -8,4 +8,5 @@
 export function acos (
 
 ) : number {
+    return Math.acos(this);
 };
