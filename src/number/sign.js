@@ -15,4 +15,5 @@
 export function sign (
 
 ) : number {
+    return Math.sign(this);
 };
