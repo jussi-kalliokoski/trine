@@ -13,6 +13,12 @@
  * ```
 */
 export function * count (
-
 ) {
+    let count = 0;
+
+    for ( const item of this ) {
+        count++;
+    }
+
+    yield count;
 };
