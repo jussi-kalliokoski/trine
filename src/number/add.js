@@ -12,5 +12,5 @@
 */
 export function add (
     b : number,
-) {
+) : number {
 };

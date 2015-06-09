@@ -40,5 +40,5 @@
 */
 export function * uniq <T> (
     comparator : (item : T) => boolean,
-) {
+) : Iterable<T> {
 };

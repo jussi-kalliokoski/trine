@@ -15,5 +15,5 @@
 */
 export function * sortAlphabetically <T> (
 
-) {
+) : Iterable<T> {
 };

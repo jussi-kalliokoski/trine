@@ -13,5 +13,5 @@
 */
 export function min (
     b : number,
-) {
+) : number {
 };

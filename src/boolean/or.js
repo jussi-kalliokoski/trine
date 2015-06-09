@@ -16,5 +16,5 @@
 */
 export function or (
     right : boolean,
-) {
+) : boolean {
 };

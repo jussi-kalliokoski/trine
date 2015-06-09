@@ -17,5 +17,5 @@
 */
 export function * takeWhile <T> (
     condition : (item : T) => boolean,
-) {
+) : Iterable<T> {
 };

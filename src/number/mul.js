@@ -14,5 +14,5 @@
 */
 export function mul (
     b : number,
-) {
+) : number {
 };

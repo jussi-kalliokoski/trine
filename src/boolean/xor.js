@@ -16,5 +16,5 @@
 */
 export function xor (
     right : boolean,
-) {
+) : boolean {
 };

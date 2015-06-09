@@ -14,5 +14,5 @@
 */
 export function mod (
     b : number,
-) {
+) : number {
 };

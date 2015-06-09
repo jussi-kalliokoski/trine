@@ -17,5 +17,5 @@
 */
 export function * fork <T> (
 
-) {
+) : Iterable<Iterable<T>> {
 };

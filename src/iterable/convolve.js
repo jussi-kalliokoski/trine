@@ -18,12 +18,14 @@
  * ```
 */
 export function * convolve <rT, iT> (
-    accumulator : (_this : iT, tail : rT) => rT,
+    accumulator : (_this : iT, tail : iT) => rT,
     tail : Iterable<iT>,
-) {
+) : Iterable<rT> {
+    let currentTail = [...tail];
+
     for ( const item of this ) {
-        const result = item::accumulator(tail);
-        tail = [item].concat(tail.slice(0, tail.length - 1));
+        const result = item::accumulator(currentTail);
+        currentTail = [item].concat(currentTail.slice(0, tail.length - 1));
         yield result;
     }
 };

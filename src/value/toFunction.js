@@ -14,5 +14,5 @@
 */
 export function toFunction (
 
-) {
+) : Function {
 };

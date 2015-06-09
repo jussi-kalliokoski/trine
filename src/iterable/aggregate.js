@@ -19,7 +19,7 @@
 export function * aggregate <rT, iT> (
     accumulator : (_this : rT, item : iT) => rT,
     accumulation : rT,
-) {
+) : Iterable<rT> {
     for ( const item of this ) {
         yield accumulation;
         accumulation = accumulation::accumulator(item);

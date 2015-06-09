@@ -18,5 +18,5 @@
 */
 export function * take <T> (
     condition : () => boolean,
-) {
+) : Iterable<T> {
 };

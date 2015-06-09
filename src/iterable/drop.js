@@ -16,7 +16,7 @@
 */
 export function * drop <T> (
     condition : (_this : T) => boolean,
-) {
+) : Iterator<T> {
     for ( const item of this ) {
         if ( !item::condition() ) { yield item; }
     }

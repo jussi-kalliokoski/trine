@@ -13,5 +13,5 @@
 */
 export function not (
 
-) {
+) : boolean {
 };

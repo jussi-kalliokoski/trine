@@ -20,5 +20,5 @@
 */
 export function * sortAlphabeticallyBy <T> (
     transformer : (b : T) => string,
-) {
+) : Iterable<T> {
 };

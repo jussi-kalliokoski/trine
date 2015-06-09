@@ -19,5 +19,5 @@
 */
 export function * quickSort <T> (
     comparator : (b : T) => number,
-) {
+) : Iterable<T> {
 };

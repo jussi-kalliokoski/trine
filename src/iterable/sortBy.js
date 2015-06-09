@@ -18,5 +18,5 @@
 */
 export function * sortBy <T> (
     transformer : () => number,
-) {
+) : Iterable<T> {
 };

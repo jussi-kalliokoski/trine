@@ -18,5 +18,5 @@
 export function * intersection <T> (
     b : Iterable<T>,
     comparator : (item: T) => number,
-) {
+) : Iterable<T> {
 };

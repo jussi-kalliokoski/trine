@@ -14,5 +14,5 @@
 */
 export function sub (
     b : number,
-) {
+) : number {
 };

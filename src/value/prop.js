@@ -12,5 +12,5 @@
 */
 export function prop (
     key : string,
-) {
+) : any {
 };

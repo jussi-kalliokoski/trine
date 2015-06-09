@@ -14,5 +14,5 @@
 */
 export function sign (
 
-) {
+) : number {
 };

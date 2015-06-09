@@ -50,5 +50,5 @@
 */
 export function partial <T> (
     ...staticParams : any,
-) {
+) : T {
 };

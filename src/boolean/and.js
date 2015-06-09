@@ -16,5 +16,5 @@
 */
 export function and (
     right : boolean,
-) {
+) : boolean {
 };

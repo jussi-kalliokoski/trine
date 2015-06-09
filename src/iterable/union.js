@@ -18,5 +18,5 @@
 export function * union <T> (
     b : Iterable<T>,
     comparator : (item: T) => number,
-) {
+) : Iterable<T> {
 };

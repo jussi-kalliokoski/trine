@@ -7,5 +7,5 @@
 */
 export function atan (
 
-) {
+) : number {
 };

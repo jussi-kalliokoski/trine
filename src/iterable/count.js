@@ -13,7 +13,7 @@
  * ```
 */
 export function * count (
-) {
+) : Iterable<T> {
     let count = 0;
 
     for ( const item of this ) {

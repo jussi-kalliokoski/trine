@@ -19,5 +19,5 @@
 export function * reduce <rT, iT> (
     accumulator : (accumulation : rT, item : iT) => rT,
     accumulation : rT,
-) {
+) : Iterable<rT> {
 };

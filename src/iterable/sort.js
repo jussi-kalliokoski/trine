@@ -14,5 +14,5 @@
 */
 export function * sort <T> (
     comparator : (b : T) => number,
-) {
+) : Iterable<T> {
 };

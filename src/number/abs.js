@@ -14,5 +14,5 @@
 */
 export function abs (
 
-) {
+) : number {
 };

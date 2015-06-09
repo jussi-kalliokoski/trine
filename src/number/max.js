@@ -13,5 +13,5 @@
 */
 export function max (
     b : number,
-) {
+) : number {
 };

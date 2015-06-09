@@ -33,5 +33,5 @@
 */
 export function * to <iT, rT> (
     Type : Function,
-) {
+) : rT {
 };

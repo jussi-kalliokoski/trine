@@ -17,5 +17,5 @@
 */
 export function * tail <T> (
     k : number,
-) {
+) : Iterable<T> {
 };

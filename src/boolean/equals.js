@@ -14,5 +14,5 @@
 */
 export function equals (
     b : any,
-) {
+) : boolean {
 };

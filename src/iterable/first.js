@@ -17,5 +17,5 @@
 */
 export function * first <T> (
     k : number,
-) {
+) : Iterable<T> {
 };

@@ -18,5 +18,5 @@
 */
 export function * map <iT, rT> (
     transformer : () => rT,
-) {
+) : Iterable<rT> {
 };

@@ -12,5 +12,5 @@
 */
 export function div (
     b : number,
-) {
+) : number {
 };

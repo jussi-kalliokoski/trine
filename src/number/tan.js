@@ -7,5 +7,5 @@
 */
 export function tan (
 
-) {
+) : number {
 };

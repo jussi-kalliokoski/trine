@@ -7,5 +7,5 @@
 */
 export function cos (
 
-) {
+) : number {
 };

@@ -7,5 +7,5 @@
 */
 export function asin (
 
-) {
+) : number {
 };

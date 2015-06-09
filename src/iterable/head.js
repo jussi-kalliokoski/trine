@@ -17,5 +17,5 @@
 */
 export function * head <T> (
     k : number,
-) {
+) : Iterable<T> {
 };

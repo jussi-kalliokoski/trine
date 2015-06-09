@@ -17,7 +17,7 @@
 */
 export function * dropWhile <T> (
     condition : (_this : T) => boolean,
-) {
+) : Iterable<T> {
     const iterator = this[Symbol.iterator]();
 
     for ( const item of iterator ) {

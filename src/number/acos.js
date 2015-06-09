@@ -7,5 +7,5 @@
 */
 export function acos (
 
-) {
+) : number {
 };

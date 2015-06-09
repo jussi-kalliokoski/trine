@@ -16,5 +16,5 @@
 */
 export function * find <T> (
     condition : () => boolean,
-) {
+) : Iterable<T> {
 };
