@@ -1,5 +1,8 @@
 "use strict";
 
+import { aggregate } from "./aggregate";
+import { last } from "./last";
+
 /**
  * Yields the accumulation of the iterator with a given accumulator method.
  *
@@ -17,7 +20,11 @@
  * ```
 */
 export function * reduce <rT, iT> (
-    accumulator : (accumulation : rT, item : iT) => rT,
+    accumulator : (_this : rT, item : iT) => rT,
     accumulation : rT,
 ) : Iterable<rT> {
+    yield * this
+        ::aggregate(accumulator, accumulation)
+        ::last(0)
+        ;
 };
