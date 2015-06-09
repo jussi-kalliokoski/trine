@@ -14,4 +14,5 @@
 export function max (
     b : number,
 ) : number {
+    return Math.max(this, b);
 };
