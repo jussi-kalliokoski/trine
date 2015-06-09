@@ -1,5 +1,8 @@
 "use strict";
 
+import { sortAlphabetically } from "./sortAlphabetically";
+import { map } from "./map";
+
 /**
  * Yields the items of the iterator sorted by a given comparator.
  *
@@ -19,6 +22,15 @@
  * ```
 */
 export function * sortAlphabeticallyBy <T> (
-    transformer : (b : T) => string,
+    transformer : (_this : T) => string,
 ) : Iterable<T> {
+    yield * this
+        ::map(function () {
+            const string = this::transformer();
+            return { value: this, toString: () => string };
+        })
+        ::sortAlphabetically()
+        ::map(function () {
+            return this.value;
+        });
 };
