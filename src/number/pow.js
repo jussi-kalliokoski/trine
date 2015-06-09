@@ -16,4 +16,5 @@
 export function pow (
     n : number,
 ) : number {
+    return this ** n;
 };
