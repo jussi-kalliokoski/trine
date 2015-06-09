@@ -15,4 +15,5 @@
 export function mod (
     b : number,
 ) : number {
+    return this % b;
 };
