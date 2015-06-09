@@ -19,4 +19,22 @@ export function * intersection <T> (
     b : Iterable<T>,
     comparator : (item: T) => number,
 ) : Iterable<T> {
+    const iteratorA = this[Symbol.iterator]();
+    const iteratorB = b[Symbol.iterator]();
+    let stepA = iteratorA.next();
+    let stepB = iteratorB.next();
+
+    while ( !stepA.done && !stepB.done ) {
+        const comparison = stepA.value::comparator(stepB.value);
+
+        if ( comparison < 0 ) {
+            stepA = iteratorA.next();
+        } else if ( comparison > 0 ) {
+            stepB = iteratorB.next();
+        } else {
+            yield stepA.value;
+            stepA = iteratorA.next();
+            stepB = iteratorB.next();
+        }
+    }
 };
