@@ -14,4 +14,5 @@
 export function not (
 
 ) : boolean {
+    return !this;
 };
