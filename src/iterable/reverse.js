@@ -15,4 +15,5 @@
 export function * reverse <T> (
 
 ) : Iterable<T> {
+    yield * [...this].reverse();
 };
