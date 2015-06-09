@@ -18,4 +18,15 @@
 export function * last <T> (
     k : number,
 ) : Iterable<T> {
+    let buffer = [];
+
+    for ( const item of this ) {
+        buffer = buffer
+            .concat([item])
+            .slice(-(k + 1));
+    }
+
+    if ( buffer.length === k + 1 ) {
+        yield buffer[0];
+    }
 };
