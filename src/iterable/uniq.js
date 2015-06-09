@@ -39,6 +39,18 @@
  * ```
 */
 export function * uniq <T> (
-    comparator : (item : T) => boolean,
+    comparator : (_this : T, b : T) => boolean,
 ) : Iterable<T> {
+    const iterator = this[Symbol.iterator]();
+    const first = iterator.next();
+
+    if ( first.done ) { return; }
+
+    yield first.value;
+    let previous = first.value;
+
+    for ( const item of iterator ) {
+        if ( !item::comparator(previous) ) { yield item; }
+        previous = item;
+    }
 };
