@@ -18,4 +18,12 @@
 export function * first <T> (
     k : number,
 ) : Iterable<T> {
+    let index = 0;
+
+    for ( const item of this ) {
+        if ( index++ === k ) {
+            yield item;
+            return;
+        }
+    }
 };
