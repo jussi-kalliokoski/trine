@@ -18,6 +18,28 @@
  * ```
 */
 export function * quickSort <T> (
-    comparator : (b : T) => number,
+    comparator : (_this: T, b : T) => number,
 ) : Iterable<T> {
+    const iterator = this[Symbol.iterator]();
+    const smaller = [];
+    const greater = [];
+    const first = iterator.next();
+
+    if ( first.done ) { return; }
+
+    const pivot = first.value;
+
+    for ( const item of iterator ) {
+        const comparison = pivot::comparator(item);
+
+        if ( comparison > 0 ) {
+            smaller.push(item);
+        } else {
+            greater.push(item);
+        }
+    }
+
+    yield * smaller::quickSort(comparator);
+    yield pivot;
+    yield * greater::quickSort(comparator);
 };
