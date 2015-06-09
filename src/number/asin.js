@@ -8,4 +8,5 @@
 export function asin (
 
 ) : number {
+    return Math.asin(this);
 };
