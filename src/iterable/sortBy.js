@@ -1,5 +1,7 @@
 "use strict";
 
+import { sort } from "./sort";
+
 /**
  * Yields the items of the iterator sorted based on score of the item returned by the transformer.
  *
@@ -17,6 +19,9 @@
  * ```
 */
 export function * sortBy <T> (
-    transformer : () => number,
+    transformer : (_this : T) => number,
 ) : Iterable<T> {
+    yield * this::sort(function (b) {
+        return this::transformer() - b::transformer();
+    });
 };
