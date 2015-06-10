@@ -30,7 +30,6 @@
  *   return this.id === b.id;
  * }); // yields { id: 1 }, { id: 2 } and { id: 1 }
  * ```
-
  *
  * @example Unique Characters in a String
  *

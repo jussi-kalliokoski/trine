@@ -30,14 +30,12 @@ function flatMap (transformer) {
  * ```javascript
  * parseInt
  * ```
-
  *
  * @example Hexadecimal `parseInt`
  *
  * ```javascript
  * parseInt
  * ```
-
  *
  * @example Fill Only the Second Argument
  *
@@ -48,7 +46,6 @@ function flatMap (transformer) {
  *
  * foo::partial(_, 2, ___)(1, 3, 4) // logs "1 2 3 4"
  * ```
-
  *
  * @example Fill Only the Second Last Argument
  *
@@ -59,7 +56,6 @@ function flatMap (transformer) {
  *
  * foo::partial(___, 3, _)(1, 2, 4) // logs "1 2 3 4"
  * ```
-
  *
  * @example Compose a Prototype Method
  *

@@ -12,7 +12,6 @@
  *   return this * 2;
  * })::to(Array) // returns [2, 4, 6]
  * ```
-
  *
  * @example Objects
  *
@@ -21,7 +20,6 @@
  *   return [this.id, this];
  * })::to(Object); // returns { a: { id: "a" }, b: { id: "b"} }
  * ```
-
  *
  * @example Other Collections
  *
