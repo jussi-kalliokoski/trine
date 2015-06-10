@@ -7,6 +7,7 @@
     "prepublish": "./scripts/build.bash",
     "testsuite": "./scripts/testsuite.bash",
     "test": "./scripts/test.bash",
+    "create-website": "./scripts/create-website.js",
     "coveralls": "cat ./.tmp/coverage/lcov.info | COVERALLS_SERVICE_NAME=\"travis-ci\" coveralls"
   },
   "repository": {
@@ -18,17 +19,24 @@
   "bugs": {
     "url": "https://github.com/jussi-kalliokoski/trine/issues"
   },
-  "homepage": "https://github.com/jussi-kalliokoski/trine#readme",
+  "homepage": "https://jussi-kalliokoski.github.io/trine/",
   "devDependencies": {
     "babel": "^5.5.6",
     "babel-runtime": "^5.5.6",
     "chai": "^3.0.0",
     "coveralls": "^2.11.2",
+    "glob": "^5.0.10",
     "isparta": "^3.0.3",
+    "marked": "^0.3.3",
+    "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "node-babel": "^0.1.2",
+    "pegjs-require": "0.0.1",
+    "react": "^0.13.3",
+    "semver": "^4.3.6",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0",
-    "source-map-support": "^0.3.1"
+    "source-map-support": "^0.3.1",
+    "trash": "^1.4.1"
   }
 }
