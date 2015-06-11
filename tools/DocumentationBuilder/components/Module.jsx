@@ -23,7 +23,8 @@ export class Module extends React.Component {
 
         return (<section id={id}>
             <h3>
-                { this.props.module.module }
+                <span>{ this.props.module.module }</span>
+                { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>
             </h3>
             { this.renderExports() }
