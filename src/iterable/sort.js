@@ -9,7 +9,7 @@
  * @example Basic Usage
  *
  * ```javascript
- * [3,2,1].sort(function (b) { return this - b; }) // yields 1, 2, 3
+ * [3,2,1]::sort(function (b) { return this - b; }) // yields 1, 2, 3
  * ```
 */
 export function * sort <T> (
