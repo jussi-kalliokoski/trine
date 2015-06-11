@@ -150,10 +150,8 @@ Trine has been designed to be modular and decoupled from the ground up. Each exp
 Trine is available on [npm](https://www.npmjs.com/):
 
 ```
-npm install --save trine babel-runtime
+npm install --save trine
 ```
-
-At the moment, Trine requires you to also install the `babel-runtime` package, and depending on your usage, probably also some polyfills.
 
 ## License
 
