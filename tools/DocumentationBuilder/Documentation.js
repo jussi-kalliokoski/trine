@@ -1,6 +1,7 @@
 "use strict";
 
 import React from "react";
+import { trackingCode } from "./trackingCode";
 import { Docs } from "./components/Docs";
 import { map } from "../../src/iterable/map";
 import { to } from "../../src/iterable/to";
@@ -48,6 +49,7 @@ body {
     font-family: sans-serif;
 }
     </style>
+    ${trackingCode}
 </head>
 <body>
     ${React.renderToStaticMarkup(<Docs {...props} />)}

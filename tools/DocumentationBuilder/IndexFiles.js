@@ -1,5 +1,7 @@
 "use strict";
 
+import { trackingCode } from "./trackingCode";
+
 export class IndexFiles {
     constructor (versions) {
         const latest = versions[0];
@@ -16,6 +18,7 @@ body {
     font-family: sans-serif;
 }
     </style>
+    ${trackingCode}
 </head>
 <body>
     <h1>Trine Documentation</h1>
@@ -43,6 +46,7 @@ body {
     font-family: sans-serif;
 }
     </style>
+    ${trackingCode}
 </head>
 <body>
     <h1>Trine Documentation</h1>
