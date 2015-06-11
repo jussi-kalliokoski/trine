@@ -41,9 +41,19 @@ items
     ::flatten()
 ```
 
-Much better. But why stop there? ES6 introduces the concept of iterators to JS. Iterators are a protocol that most collection types in ES6 (Map, Set, Array, etc.) implement, by exposing a function under the `Symbol.iterator` symbol. This means you can also extend your custom collection types to support the same protocol, and generator functions support it too. Iterators are a very flexible abstraction over collections, and unlike memory-bound collections, can also represent infinite sets, such as the Fibonacci series or prime numbers. In a memory-bound collection an infinite number of items would require infinite memory.
+Much better. But that's not all. Let's imagine we had a custom `map` and `reduce` methods that passed each item as `this` to the transformer function, as well as some other helpers. This would allow us to compose using the builtins, as so:
 
-Iterators, on the other hand, allow us to process only as much as we need. So let's say we wanted to find the first 5 common items (intersection) of two infinite sets, the Fibonacci series and the prime numbers. The following is a working example of Trine:
+```javascript
+const characters = strings
+    ::map(String.prototype.split::partial(""))
+    ::reduce(Array.prototype.concat)
+    .sort()
+    ::uniq();
+```
+
+But why stop there? ES6 introduces the concept of iterators to JS. Iterators are a protocol that most collection types in ES6 (Map, Set, Array, etc.) implement, by exposing a function under the `Symbol.iterator` symbol. This means you can also extend your custom collection types to support the same protocol, and generator functions support it too. Iterators are a very flexible abstraction over collections, and unlike memory-bound collections, can also represent infinite sets, such as the Fibonacci series or prime numbers. In a memory-bound collection an infinite number of items would require infinite memory.
+
+Iterators, on the other hand, allow us to process only as much as we need. So let's say we wanted to find the first 5 common items (intersection) of two infinite sets, the Fibonacci series and the prime numbers. The following is a working example of Trine, as Trine's all collection methods are actually methods for iterables:
 
 ```javascript
 function * fibonacci () {
