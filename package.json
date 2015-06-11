@@ -2,9 +2,10 @@
   "name": "trine",
   "version": "0.0.0",
   "description": "The library modern JS doesn't deserve, but needs right now.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "prepublish": "./scripts/build.bash",
+    "generate-packages": "./scripts/generate-packages.js",
     "testsuite": "./scripts/testsuite.bash",
     "test": "./scripts/test.bash",
     "create-website": "./scripts/create-website.js",
@@ -20,6 +21,13 @@
     "url": "https://github.com/jussi-kalliokoski/trine/issues"
   },
   "homepage": "https://jussi-kalliokoski.github.io/trine/",
+  "files": [
+    "boolean",
+    "function",
+    "iterable",
+    "number",
+    "value"
+  ],
   "devDependencies": {
     "babel": "^5.5.6",
     "babel-runtime": "^5.5.6",
