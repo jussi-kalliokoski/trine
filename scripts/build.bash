@@ -2,7 +2,7 @@
 
 set -e
 
-trash dist
+trash --force dist
 mkdir -p dist
 
 git clone -b gh-pages https://github.com/jussi-kalliokoski/trine.git dist/website
