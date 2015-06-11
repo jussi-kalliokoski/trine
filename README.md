@@ -1,5 +1,7 @@
 # Trine
 
+[![Join the chat at https://gitter.im/jussi-kalliokoski/trine](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jussi-kalliokoski/trine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/jussi-kalliokoski/trine.svg?branch=master)](https://travis-ci.org/jussi-kalliokoski/trine)
 [![Coverage Status](https://img.shields.io/coveralls/jussi-kalliokoski/trine.svg)](https://coveralls.io/r/jussi-kalliokoski/trine)
 
