@@ -9,6 +9,16 @@ body {
     font-family: sans-serif;
 }
     </style>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64008323-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
     <h1 id="trine">Trine</h1>
@@ -40,8 +50,15 @@ body {
     .map(toOtherType)
     ::flatten()
 </code></pre>
-<p>Much better. But why stop there? ES6 introduces the concept of iterators to JS. Iterators are a protocol that most collection types in ES6 (Map, Set, Array, etc.) implement, by exposing a function under the <code>Symbol.iterator</code> symbol. This means you can also extend your custom collection types to support the same protocol, and generator functions support it too. Iterators are a very flexible abstraction over collections, and unlike memory-bound collections, can also represent infinite sets, such as the Fibonacci series or prime numbers. In a memory-bound collection an infinite number of items would require infinite memory.</p>
-<p>Iterators, on the other hand, allow us to process only as much as we need. So let&#39;s say we wanted to find the first 5 common items (intersection) of two infinite sets, the Fibonacci series and the prime numbers. The following is a working example of Trine:</p>
+<p>Much better. But that&#39;s not all. Let&#39;s imagine we had a custom <code>map</code> and <code>reduce</code> methods that passed each item as <code>this</code> to the transformer function, as well as some other helpers. This would allow us to compose using the builtins, as so:</p>
+<pre><code class="lang-javascript">const characters = strings
+    ::map(String.prototype.split::partial(&quot;&quot;))
+    ::reduce(Array.prototype.concat)
+    .sort()
+    ::uniq();
+</code></pre>
+<p>But why stop there? ES6 introduces the concept of iterators to JS. Iterators are a protocol that most collection types in ES6 (Map, Set, Array, etc.) implement, by exposing a function under the <code>Symbol.iterator</code> symbol. This means you can also extend your custom collection types to support the same protocol, and generator functions support it too. Iterators are a very flexible abstraction over collections, and unlike memory-bound collections, can also represent infinite sets, such as the Fibonacci series or prime numbers. In a memory-bound collection an infinite number of items would require infinite memory.</p>
+<p>Iterators, on the other hand, allow us to process only as much as we need. So let&#39;s say we wanted to find the first 5 common items (intersection) of two infinite sets, the Fibonacci series and the prime numbers. The following is a working example of Trine, as Trine&#39;s all collection methods are actually methods for iterables:</p>
 <pre><code class="lang-javascript">function * fibonacci () {
     let i0 = 1;
     let i1 = 0;
