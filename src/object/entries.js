@@ -9,9 +9,9 @@
  * @example Basic Usage
  *
  * ```javascript
- * {a:1,b:2,c:3}::entries() // yields ['a',1], ['b',2], ['c',3] 
+ * {a:1,b:2,c:3}::entries() // yields ["a",1], ["b",2], ["c",3] 
  * ```
 */
-export function * entries () : Iterable<Array<String,T>> {
+export function * entries () : Iterable<[string, any]> {
     yield * Object.entries(this);
 };

@@ -9,9 +9,9 @@
  * @example Basic Usage
  *
  * ```javascript
- * {a:1,b:2,c:3}::keys() // yields 1, 2, 3
+ * {a:1,b:2,c:3}::values() // yields 1, 2, 3
  * ```
 */
-export function * values() : Iterable<Array<T>> {
+export function * values () : Iterable<any> {
     yield * Object.values(this);
 };
