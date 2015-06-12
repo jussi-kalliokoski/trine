@@ -3,16 +3,15 @@
 /**
  * Yields entries of the bound object.
  *
- * @this {Object}
+ * @this {Object<T>}
  * @ntime O(n)
  * @dspace O(n)
  * @example Basic Usage
  *
  * ```javascript
- * {a:1,b:2,c:3}::pairs()
- * }) // yields ['a',1], ['b',2], ['c',3] 
+ * {a:1,b:2,c:3}::entries() // yields ['a',1], ['b',2], ['c',3] 
  * ```
 */
-export function * entries () : Iterable<Array> {
-  yield* Object.entries(this);
+export function * entries () : Iterable<Array<String,T>> {
+    yield * Object.entries(this);
 };

@@ -7,7 +7,7 @@ describe("entries()", function () {
         [...{a:1,b:2,c:3}::entries()].should.deep.equal([
             ['a',1],
             ['b',2],
-            ['c',3]
+            ['c',3],
         ]);
     });
 });
