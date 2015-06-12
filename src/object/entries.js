@@ -3,7 +3,7 @@
 /**
  * Yields entries of the bound object.
  *
- * @this {Object<T>}
+ * @this {Object}
  * @ntime O(n)
  * @dspace O(n)
  * @example Basic Usage
