@@ -10,9 +10,9 @@
  *
  * ```javascript
  * {a:1,b:2:c:3}::keys()
- * }) // yields 'a', 'b', 'c'
+ * }) // yields '1', '2', '3'
  * ```
 */
-export function * values() : Iterable<Object> {
-  yield* Object.keys(this).map( (key)=>this[key] );
+export function * values() : Iterable<Array> {
+  yield* Object.values(this);
 };

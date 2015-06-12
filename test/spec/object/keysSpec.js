@@ -1,6 +1,6 @@
 "use strict";
 
-import { keys } from "../../../src/iterable/keys";
+import { keys } from "../../../src/object/keys";
 
 describe("keys()", function () {
     it("should yield the keys of an object", function () {

@@ -1,6 +1,6 @@
 "use strict";
 
-import { values } from "../../../src/iterable/values";
+import { values } from "../../../src/object/values";
 
 describe("values()", function () {
     it("should yield the values of an object", function () {
