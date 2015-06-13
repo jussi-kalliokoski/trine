@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Yields entries of the bound object.
+ * Yields the entries of the bound object.
  *
  * @this {Object}
  * @ntime O(n)
