@@ -7,7 +7,7 @@ describe("enumerate()", function () {
        [...[1,2,3]::enumerate()].should.deep.equal([ 
            [0,1],
            [1,2],
-           [2,3]
+           [2,3],
        ]);
     });
 });
