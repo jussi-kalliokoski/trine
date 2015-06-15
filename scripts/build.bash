@@ -9,4 +9,5 @@ git clone -b gh-pages https://github.com/jussi-kalliokoski/trine.git dist/websit
 npm run create-website
 
 babel -d dist/main src
+cp README.md dist/main
 npm run generate-packages
