@@ -8,10 +8,10 @@
  * @example Basic Usage
  *
  * ```javascript
- * true::and(true) // false
- * true::and(false) // true
- * false::and(true) // true
- * false::and(false) // false
+ * true::xor(true) // false
+ * true::xor(false) // true
+ * false::xor(true) // true
+ * false::xor(false) // false
  * ```
 */
 export function xor (
