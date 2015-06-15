@@ -1,7 +1,7 @@
 {
   "name": "trine",
   "version": "0.0.0",
-  "description": "The library modern JS doesn't deserve, but needs right now.",
+  "description": "A utility library for modern JavaScript.",
   "private": true,
   "scripts": {
     "prepublish": "./scripts/build.bash",

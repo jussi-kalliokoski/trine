@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/jussi-kalliokoski/trine.svg?branch=master)](https://travis-ci.org/jussi-kalliokoski/trine)
 [![Coverage Status](https://img.shields.io/coveralls/jussi-kalliokoski/trine.svg)](https://coveralls.io/r/jussi-kalliokoski/trine)
 
-> The library modern JavaScript doesn't deserve, but needs right now.
+> A utility library for modern JavaScript.
 
 Trine is a utility library geared at tapping the full potential of functional programming in JS, in the vein of [lodash](https://lodash.com/), [underscore](http://underscorejs.org/) and [Ramda](http://ramdajs.com/).
 
