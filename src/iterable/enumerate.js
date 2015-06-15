@@ -17,7 +17,7 @@ export function * enumerate <iT> (
  
 ) : Iterable<[number, iT]> {
     let index = 0;
-    for( const item of this ) {
+    for ( const item of this ) {
         yield [index++, item];
     }
 };
