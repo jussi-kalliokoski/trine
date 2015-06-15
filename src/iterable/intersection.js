@@ -3,7 +3,7 @@
 /**
  * Yields the sorted intersection iterator of two sorted iterators.
  *
- * @this {Iterable<T>}
+ * @this {Iterable<Iterable<T>>}
  * @param comparator The sorting value function. Should return `0` when items are equal, a positive number when the item on the left is
  * greater and a negative number when the item on the right is greater.
  * @ntime O(n+m)
@@ -11,17 +11,22 @@
  * @example Basic Usage
  *
  * ```javascript
- * [1,2,3,4,5]::intersection([2,3,4,6], function (b) {
+ * [[1,2,3,4,5], [2,3,4,6]]::intersection(function (b) {
  *   return this - b;
  * }); // yields 2,3,4
  * ```
 */
 export function * intersection <T> (
-    b : Iterable<T>,
     comparator : (_this: T, item: T) => number,
 ) : Iterable<T> {
-    const iteratorA = this[Symbol.iterator]();
-    const iteratorB = b[Symbol.iterator]();
+    const iterators = [...this].map((item) => item[Symbol.iterator]());
+
+    if ( iterators.length !== 2 ) {
+        throw new Error("intersection() takes two iterators, " +
+            iterators.length + " were passed");
+    }
+
+    const [iteratorA, iteratorB] = iterators;
     let stepA = iteratorA.next();
     let stepB = iteratorB.next();
 

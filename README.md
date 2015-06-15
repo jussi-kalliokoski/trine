@@ -83,8 +83,8 @@ function * primes () {
     }
 }
 
-const commonItems = fibonacci()
-    ::intersection(primes(), sub)
+const commonItems = [fibonacci(), primes()]
+    ::intersection(sub)
     ::head(5)
     ::to(Array);
 console.log(commonItems); // logs [1, 2, 3, 5, 13]
@@ -94,9 +94,11 @@ Using iterators also allows us to easily timebox even synchronous operations. Le
 
 ```javascript
 const deadline = Date.now() + 1000;
-const commonItems = fibonacci()
-    ::takeWhile(() => Date.now() < deadline)
-    ::intersection(primes(), sub)
+const commonItems = [
+    fibonacci()::takeWhile(() => Date.now() < deadline),
+    primes(),
+]
+    ::intersection(sub)
     ::head(1000)
     ::to(Array);
 
