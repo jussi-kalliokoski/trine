@@ -11,7 +11,7 @@
  *
  * ```javascript
  * [1,2,3,4,1,2,3,4]::dropWhile(function () {
- *   return this &lt; 4;
+ *   return this < 4;
  * }) // yields 4, 1, 2, 3, 4
  * ```
 */
