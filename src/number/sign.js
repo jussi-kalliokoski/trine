@@ -9,7 +9,7 @@
  * ```javascript
  * 0::sign() // returns 0
  * 4::sign() // returns 1
- * -5::sign() // returns -1
+ * (-5)::sign() // returns -1
  * ```
 */
 export function sign (
