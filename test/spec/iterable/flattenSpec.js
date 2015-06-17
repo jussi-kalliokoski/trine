@@ -33,7 +33,7 @@ describe("flatten()", function () {
     });
 
     it("should flatten map using setters", function () {
-      let map = new Map().set('a', 1).set('b', 2);
+      let map = new Map().set("a", 1).set("b", 2);
       [...[map]::flatten()].should.deep.equal([["a",1],["b",2]]);
     });
 
@@ -43,7 +43,7 @@ describe("flatten()", function () {
     });
 
     it("should flatten set using setters", function () {
-      let set = new Set().add('a').add(1);
+      let set = new Set().add("a").add(1);
       [...[set]::flatten()].should.deep.equal(["a", 1]);
     });
 
@@ -67,7 +67,7 @@ describe("flatten()", function () {
       let outcome = ["a", 1,4,5,6, [1,"a"],[2,"b"], "c","d"];
       [...elements::flatten()].should.deep.equal(outcome);
     });
-    
+
     it("should flatten generators", function () {
       let generator = function* (){
           yield 1;
