@@ -9,7 +9,7 @@
  * @example Basic Usage
  *
  * ```javascript
- * {a:1,b:2,c:3}::entries() // yields ["a",1], ["b",2], ["c",3] 
+ * {a:1,b:2,c:3}::entries() // yields ["a",1], ["b",2], ["c",3]
  * ```
 */
 export function * entries () : Iterable<[string, any]> {

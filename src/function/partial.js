@@ -21,7 +21,8 @@ function flatMap (transformer) {
 }
 
 /**
- * Returns a version of the function that has given parameters prefilled and passes given parameters through to the original, denoted by placeholders.
+ * Returns a version of the function that has given parameters prefilled and passes given parameters through to the original,
+ * denoted by placeholders.
  *
  * @this {T}
  * @param ...staticParams The prefilled parameters.

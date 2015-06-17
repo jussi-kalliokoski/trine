@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Yields the items of the iterator with their indexes.  
+ * Yields the items of the iterator with their indexes.
  *
  * @type iT The item type of the input iterator.
  * @this {Iterable<iT>}
@@ -14,7 +14,7 @@
  * ```
 */
 export function * enumerate <iT> (
- 
+
 ) : Iterable<[number, iT]> {
     let index = 0;
     for ( const item of this ) {
