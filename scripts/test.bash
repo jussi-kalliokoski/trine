@@ -2,3 +2,4 @@
 
 set -e
 npm run testsuite
+jscs src/*/*.js
