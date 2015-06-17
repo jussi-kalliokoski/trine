@@ -11,12 +11,9 @@
  * ```
 */
 
-export function * flatten () : Iterable<T> {
-    for (let x of this) {
-      if (typeof(x[Symbol.iterator]) == "function") {
-        yield* x::flatten();
-      } else {
-        yield x;
-      }
-    }
-  };
+import { flattenDeep } from "./flattenDeep";
+
+export function * flatten() :
+  Iterable<T> {
+    yield* this::flattenDeep(1);
+  }
