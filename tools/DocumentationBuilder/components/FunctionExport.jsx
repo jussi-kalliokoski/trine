@@ -136,7 +136,7 @@ export class FunctionExport extends React.Component {
     renderImportExample (expId) {
         return (<CodeBlock
             language="javascript"
-            code={`import ${this.props.function.name} from ${this.props.importTarget};`}
+            code={`import { ${this.props.function.name} } from "${this.props.importTarget}";`}
         />);
     }
 
