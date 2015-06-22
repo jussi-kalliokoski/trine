@@ -1,5 +1,7 @@
 "use strict";
 
+import "normalize.css";
+import "./styles/styles.css";
 import "highlight.js/styles/default.css";
 import "codemirror/lib/codemirror.css";
 import React from "react";

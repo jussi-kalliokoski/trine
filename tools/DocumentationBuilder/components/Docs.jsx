@@ -96,33 +96,32 @@ export class Docs extends React.Component {
         });
     }
 
-    renderTableOfContents () {
+    renderNav () {
         const categories = this.props.categories.map((category) => {
             const modules = category.modules.map((module) => {
                 const exports = module.exports.map((exp) => {
-                    return (<li key={exp.name}>
+                    return (<li key={exp.name} className="nav__exports__item">
                         <a href={"#" + "categories-" + category.name + "-modules-" + module.module + "-exports-" + exp.name}>
                             <code>{ exp.name + "()" }</code>
                         </a>
                     </li>)
                 });
 
-                return (<li key={module.module}>
+                return (<li key={module.module} className="nav__modules__item">
                     <a href={"#categories-" + category.name + "-modules-" + module.module}>{module.module}</a>
-                    <ul>{exports}</ul>
+                    <ul className="nav__exports">{exports}</ul>
                 </li>);
             });
 
-            return (<li key={category.name}>
+            return (<li key={category.name} className="nav__category__item">
                 <a href={"#categories-" + category.name}>{category.name}</a>
-                <ul>{modules}</ul>
+                <ul className="nav__modules">{modules}</ul>
             </li>);
         });
 
-        return (<section id="table-of-contents">
-            <h2>Table of Contents</h2>
-            <ul>{categories}</ul>
-        </section>);
+        return (<nav className="nav"><section id="table-of-contents">
+            <ul className="nav__category">{categories}</ul>
+        </section></nav>);
     }
 
     renderDocumentation () {
@@ -134,17 +133,31 @@ export class Docs extends React.Component {
 
         return (<div>
             <h1>Trine v.{this.props.version} Documentation</h1>
-            { this.renderTableOfContents() }
             { categories }
         </div>);
+    }
+
+    renderHeader () {
+        return (<header className="header">
+            <img src="../../images/trine-logo-dark-no-text@x2.png" className="header__train-logo" />
+            <span className="header__tag-line">
+                <strong>trine</strong> { " " } { "Documentation" }
+            </span>
+            <a className="header__aside" href="https://github.com/jussi-kalliokoski/trine">Github</a>
+        </header>);
     }
 
     render () {
         const content = this.state.codeEditorOpen ?
             this.renderCodeEditor() :
             this.renderDocumentation();
-        return (<div className="content" role="main">
-            { content }
+
+        return (<div>
+            { this.renderHeader() }
+            { this.renderNav() }
+            <div className="content" role="main">
+                { content }
+            </div>
         </div>)
     }
 };

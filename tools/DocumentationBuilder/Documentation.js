@@ -118,6 +118,7 @@ body {
     <script type="x-application/bundled-json" id="props">${this.json}</script>
     <script src="https://babeljs.io/scripts/babel.js" async></script>
     <script>${this.js}</script>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,900" rel="stylesheet">
 </body>
 </html>`;
     }
