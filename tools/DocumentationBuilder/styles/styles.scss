@@ -1,0 +1,121 @@
+@import "normalize";
+
+* {
+  box-sizing: border-box;
+}
+
+$black: #333333;
+$orange: #ed6b32;
+$grey: #eaeaea;
+
+body {
+  font-family: Roboto, sans-serif;
+  background: #fff;
+}
+
+.header {
+  background: $black;
+  color: #fff;
+  padding: 1em 2em;
+  height: 50px;
+}
+
+.header__train-logo {
+  width: 25px;
+  position: absolute;
+  z-index: 0;
+  top: 11px;
+  left: 40px;
+}
+
+.header__tag-line {
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  line-height: 20px;
+  font-size: 1.3em;
+  color: $orange;
+
+  strong {
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+a.header__aside {
+  float: right;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  position: fixed;
+  padding: 1em 1em 1em 20em;
+  overflow-x: scroll;
+  top: 50px;
+  bottom: 0;
+  width: 100%;
+  background: $grey;
+}
+
+.nav {
+  width: 20em;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  overflow-x: scroll;
+  padding: 1em;
+  background: $grey;
+}
+
+.nav ul {
+  background: #fff;
+}
+
+.nav li a {
+  color: $orange;
+  text-decoration: none;
+}
+
+// Nesting ul's is hacky - we should give each ul a class
+
+.nav__category {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+  font-weight: 300;
+}
+
+.nav__category__item a {
+  display: block;
+  padding: 1em;
+  background: $black;
+}
+
+// .nav__module
+.nav ul ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2em solid $grey !important;
+
+  li a {
+    border: none !important; // yuk
+    background: transparent !important; // yuk
+    padding: .5em 0 .5em 1em !important; // yuk
+  }
+}
+
+// .nav__export
+.nav ul ul ul {
+  margin: 0;
+  border: none !important;
+  display: none;
+
+  li a {
+    border: none !important; // yuk
+    background: transparent !important; // yuk
+    padding: 0 !important; // yuk
+  }
+}
