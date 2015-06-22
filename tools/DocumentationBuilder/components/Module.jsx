@@ -9,6 +9,7 @@ export class Module extends React.Component {
             if ( exp.type === "Function" ) {
                 return (<FunctionExport
                     key={exp.name}
+                    onCodeEditorOpened={this.props.onCodeEditorOpened}
                     function={exp}
                     categoryName={this.props.categoryName}
                     moduleName={this.props.module.module}

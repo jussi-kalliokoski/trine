@@ -5,6 +5,12 @@ import { trackingCode } from "./trackingCode";
 import { Docs } from "./components/Docs";
 import { map } from "../../src/iterable/map";
 import { to } from "../../src/iterable/to";
+import MemoryFileSystem from "memory-fs";
+import webpack from "webpack";
+import { join, resolve } from "path";
+import autoprefixer from "autoprefixer-core";
+import simpleVars from "postcss-simple-vars";
+import nested from "postcss-nested";
 
 function groupBy (key) {
     const map = new Map();
@@ -23,9 +29,65 @@ function groupBy (key) {
 
 export class Documentation {
     constructor (modules) {
-        const version = modules[0].version;
-        const name = modules[0].libraryName;
-        const categories = modules
+        this.modules = modules;
+    }
+
+    create () {
+        return new Promise((resolvePromise, rejectPromise) => {
+            const fs = new MemoryFileSystem();
+            const compiler = webpack({
+                entry: [join(__dirname, "app", "index.js")],
+
+                output: {
+                    filename: "docs.js",
+                    path: join(__dirname, "..", "..", "dist", "website", "assets", "static"),
+                },
+
+                resolve: {
+                    extensions: ["", ".js", ".jsx", ".json"],
+                },
+
+                module: {
+                    loaders: [{
+                        loader: "babel-loader",
+                        test: /\.jsx?$/,
+                        include: [
+                            __dirname,
+                            resolve(join(__dirname, "..", "..", "src")),
+                            resolve(join(__dirname, "..", "..", ".tmp")),
+                        ],
+                    }, {
+                        loader: "style-loader!css-loader!postcss-loader?pack=docs",
+                        test: /\.css$/,
+                    }, {
+                        loader: "json-loader",
+                        test: /\.json$/,
+                    }],
+                },
+
+                postcss: {
+                    docs: [simpleVars, nested, autoprefixer],
+                },
+            }, function (error, stats) {
+                if ( error ) { return rejectPromise(error); }
+                console.error(stats.toString());
+                resolvePromise();
+            });
+
+            compiler.outputFileSystem = fs;
+
+            compiler.plugin("after-emit", (compilation, callback) => {
+                const outname = Object.keys(compilation.assets)[0];
+                this.js = fs.readFileSync(fs.join(compiler.outputPath, outname)).toString("utf8");
+                callback();
+            });
+        }).then(() => this.build());
+    }
+
+    build () {
+        const version = this.modules[0].version;
+        const name = this.modules[0].libraryName;
+        const categories = this.modules
             ::groupBy("category")
             .entries()
             ::map(function () {
@@ -52,7 +114,10 @@ body {
     ${trackingCode}
 </head>
 <body>
-    ${React.renderToStaticMarkup(<Docs {...props} />)}
+    <div id="container">${React.renderToString(<Docs {...props} />)}</div>
+    <script type="x-application/bundled-json" id="props">${this.json}</script>
+    <script src="https://babeljs.io/scripts/babel.js" async></script>
+    <script>${this.js}</script>
 </body>
 </html>`;
     }

@@ -14,8 +14,10 @@ export class FunctionExport extends React.Component {
                 if ( block.type === "code" ) {
                     return (<CodeBlock
                         key={"code-" + index}
+                        onCodeEditorOpened={this.props.onCodeEditorOpened}
                         language={block.language}
                         code={block.content}
+                        header={`import { ${this.props.function.name} } from "${this.props.importTarget}";`}
                     />);
                 } else if ( block.type === "html" ) {
                     return (<div
@@ -136,6 +138,7 @@ export class FunctionExport extends React.Component {
     renderImportExample (expId) {
         return (<CodeBlock
             language="javascript"
+            onCodeEditorOpened={this.props.onCodeEditorOpened}
             code={`import { ${this.props.function.name} } from "${this.props.importTarget}";`}
         />);
     }

@@ -6,7 +6,12 @@ import { Module } from "./Module";
 export class Category extends React.Component {
     renderModules () {
         return this.props.category.modules.map((module) => {
-            return (<Module key={module.module} module={module} categoryName={this.props.category.name} />);
+            return (<Module
+                onCodeEditorOpened={this.props.onCodeEditorOpened}
+                key={module.module}
+                module={module}
+                categoryName={this.props.category.name}
+            />);
         });
     }
 

@@ -20,12 +20,8 @@ function bySemver (b) {
     return compare(b, this);
 }
 
-export function build () {
-    const docDir = path.join("dist", "website", "docs");
-    mkdir(docDir);
-    mkdir(path.join(docDir, "latest"));
-
-    const docs = glob
+async function buildDocs () {
+     const modules = glob
         .sync(path.join("*", "*.js"), { cwd: "src" })
         ::map(function () {
             const category = this.split(path.sep)[0];
@@ -41,7 +37,38 @@ export function build () {
             };
         })
         ::map(readDefinitions)
-        ::to(Documentation);
+        ::to(Array);
+
+    const docs = new Documentation(modules);
+    await docs.create();
+    return docs;
+}
+
+export async function build () {
+    const docDir = path.join("dist", "website", "docs");
+    mkdir(docDir);
+    mkdir(path.join(docDir, "latest"));
+
+    const trineRequireSource = `"use strict";
+
+const tree = new Map();
+
+${ glob.sync(path.join("*", "*.js"), { cwd: "src" }).map((path) => {
+    return `tree.set("trine/${path.replace(/\.js$/, "")}", require("../src/${path}"));`;
+}).join("\n") }
+
+export function trineRequire (modulePath) {
+    if ( tree.has(modulePath) ) {
+        return tree.get(modulePath);
+    } else {
+        throw new Error("Module not found:" + modulePath);
+    }
+};
+`;
+
+    write(path.join(".tmp", "trineRequire.js"), trineRequireSource, "utf8");
+
+    const docs = await buildDocs();
 
     mkdir(path.join(docDir, "v" + pkg.version));
     write(path.join(docDir, "v" + pkg.version, "index.html"), docs.html, "utf8");
