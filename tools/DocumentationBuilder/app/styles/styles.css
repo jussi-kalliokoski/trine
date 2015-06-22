@@ -118,3 +118,21 @@ a.header__aside {
     padding: 0 !important; /* yuk */
   }
 }
+
+.anchor {
+  position: relative;
+  top: -0.5em;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: $orange;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.module-section__header {
+    display: none;
+}

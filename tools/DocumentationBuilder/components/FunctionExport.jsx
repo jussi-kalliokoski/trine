@@ -28,8 +28,8 @@ export class FunctionExport extends React.Component {
             });
 
             const exampleId = id + "-" + example.title.toLowerCase().replace(/[^\w]+/g, "_");
-            return (<section key={example.title} id={exampleId}>
-                <h6>
+            return (<section key={example.title} id={exampleId} className="function-section__example">
+                <h6 className="function-section__example__header">
                     <span dangerouslySetInnerHTML={{__html: example.title}} />
                     { " " }
                     <a className="anchor" href={"#" + exampleId}>{"#"}</a>
@@ -38,8 +38,8 @@ export class FunctionExport extends React.Component {
             </section>)
         });
 
-        return (<section id={id}>
-            <h5>
+        return (<section id={id} className="function-section__examples">
+            <h5 className="function-section__examples__header">
                 <span>{"examples"}</span>
                 { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>
@@ -50,8 +50,8 @@ export class FunctionExport extends React.Component {
 
     renderReturns (expId) {
         const id = expId + "-returns";
-        return (<section id={id}>
-            <h5>
+        return (<section id={id} className="function-section__returns">
+            <h5 className="function-section__returns__header">
                 <span>{"Returns"}</span>
                 { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>
@@ -85,8 +85,8 @@ export class FunctionExport extends React.Component {
         });
 
         const id = expId + "-parameters";
-        return (<section id={id}>
-            <h5>
+        return (<section id={id} className="function-section__parameters">
+            <h5 className="function-section__parameters__header">
                 <span>{"Parameters"}</span>
                 { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>
@@ -115,8 +115,8 @@ export class FunctionExport extends React.Component {
         if ( typeParameters.length === 0 ) { return null; }
 
         const id = expId + "-type_parameters";
-        return (<section id={id}>
-            <h5>
+        return (<section id={id} className="function-section__type-parameters">
+            <h5 className="function-section__type-parameters__header">
                 <span>{ "Type Parameters" }</span>
                 { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>
@@ -149,8 +149,8 @@ export class FunctionExport extends React.Component {
 
         const typeParameters = this.props.function.typeParameters.map((p) => p.name).join(", ");
 
-        return (<section id={id}>
-            <h4>
+        return (<section id={id} className="function-section">
+            <h4 className="function-section__header">
                 <code>{
                     this.props.function.name +
                         (typeParameters ? "<" + typeParameters + ">" : "") + "()"
