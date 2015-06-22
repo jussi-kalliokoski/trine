@@ -29,13 +29,13 @@ function flatMap (transformer) {
  * @example Unary `parseInt`
  *
  * ```javascript
- * parseInt
+ * parseInt::partial(_)("10", 2) // 10
  * ```
  *
  * @example Hexadecimal `parseInt`
  *
  * ```javascript
- * parseInt
+ * parseInt::partial(_, 16)("10") // 16
  * ```
  *
  * @example Fill Only the Second Argument
