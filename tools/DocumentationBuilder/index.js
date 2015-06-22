@@ -3,6 +3,7 @@
 import path from "path";
 import glob from "glob";
 import { writeFileSync as write, readFileSync as read } from "fs";
+import { ncp as copyRecursive } from "ncp";
 import { sync as mkdir } from "mkdirp";
 import { compare } from "semver";
 import { map } from "../../src/iterable/map";
@@ -16,17 +17,17 @@ import { IndexFiles } from "./IndexFiles";
 import { LandingPage } from "./LandingPage";
 import pkg from "../../package.json";
 
-function bySemver (b) {
+function bySemver(b) {
     return compare(b, this);
 }
 
-export function build () {
+export function build() {
     const docDir = path.join("dist", "website", "docs");
     mkdir(docDir);
     mkdir(path.join(docDir, "latest"));
 
     const docs = glob
-        .sync(path.join("*", "*.js"), { cwd: "src" })
+        .sync(path.join("*", "*.js"), {cwd: "src"})
         ::map(function () {
             const category = this.split(path.sep)[0];
             const module = this.split(path.sep)[1].replace(/\.js$/, "");
@@ -46,9 +47,11 @@ export function build () {
     mkdir(path.join(docDir, "v" + pkg.version));
     write(path.join(docDir, "v" + pkg.version, "index.html"), docs.html, "utf8");
     write(path.join(docDir, "v" + pkg.version, "index.json"), docs.json, "utf8");
+    copyRecursive(path.join("tools", "DocumentationBuilder", "styles"), path.join(docDir, "v" + pkg.version, "css"));
+    copyRecursive(path.join("tools", "DocumentationBuilder", "images"), path.join(docDir, "v" + pkg.version, "images"));
 
     const index = glob
-        .sync("v*", { cwd: docDir })
+        .sync("v*", {cwd: docDir})
         ::sort(bySemver)
         ::to(IndexFiles);
 

@@ -42,17 +42,25 @@ export class Documentation {
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Trine v${version} Documentation</title>
-    <style>
-body {
-    font-family: sans-serif;
-}
-    </style>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+
     ${trackingCode}
 </head>
 <body>
-    ${React.renderToStaticMarkup(<Docs {...props} />)}
+    <header class="header">
+      <img src="images/trine-logo-dark-no-text@x2.png" class="header__train-logo">
+      <span class="header__tag-line">
+        <strong>trine</strong> Documentation
+      </span>
+      <a class="header__aside" href="https://github.com/jussi-kalliokoski/trine">Github</a>
+    </header>
+
+    <div class="container">
+        ${React.renderToStaticMarkup(<Docs {...props} />)}
+    </div>
 </body>
 </html>`;
     }

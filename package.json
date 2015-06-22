@@ -43,6 +43,7 @@
     "marked": "^0.3.3",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
+    "ncp": "^2.0.0",
     "node-babel": "^0.1.2",
     "pegjs-require": "0.0.1",
     "react": "^0.13.3",
