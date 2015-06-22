@@ -20,7 +20,7 @@ export class FunctionExport extends React.Component {
                 } else if ( block.type === "html" ) {
                     return (<div
                         key={"code-" + index}
-                        dangerouslySetInnerHTML={{__html: block.conten }}
+                        dangerouslySetInnerHTML={{__html: block.content }}
                     />)
                 }
             });
