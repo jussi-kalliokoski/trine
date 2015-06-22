@@ -97,7 +97,7 @@ export function readDefinitions () {
                                 if ( block.type === "CodeBlock" ) {
                                     return {
                                         type: "code",
-                                        language: block.lang,
+                                        language: block.lang ? block.lang.name : "",
                                         content: block.code,
                                     };
                                 } else {
