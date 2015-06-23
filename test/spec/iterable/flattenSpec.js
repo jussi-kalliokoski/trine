@@ -3,7 +3,7 @@
 import { flatten } from "../../../src/iterable/flatten";
 
 describe("flatten()", function () {
-    it("should flatten an empty array", function () {
+    it("should return an empty array", function () {
       [...[]::flatten()].should.deep.equal([]);
     });
 
@@ -28,28 +28,13 @@ describe("flatten()", function () {
     });
 
     it("should flatten array of strings", function () {
-      let outcome = ["h","e","l","l","o","w","o","r","l","d"];
+      const outcome = ["h","e","l","l","o","w","o","r","l","d"];
       [...["hello", "world"]::flatten()].should.deep.equal(outcome);
     });
 
-    it("should flatten map using setters", function () {
-      let map = new Map().set("a", 1).set("b", 2);
-      [...[map]::flatten()].should.deep.equal([["a",1],["b",2]]);
-    });
-
-    it("should flatten map using constructor", function () {
-      let map = new Map([[1,"a"], [2, "b"]]);
+    it("should flatten map", function () {
+      const map = new Map([[1,"a"], [2, "b"]]);
       [...[map]::flatten()].should.deep.equal([[1,"a"],[2,"b"]]);
-    });
-
-    it("should flatten set using setters", function () {
-      let set = new Set().add("a").add(1);
-      [...[set]::flatten()].should.deep.equal(["a", 1]);
-    });
-
-    it("should flatten set using constructor", function () {
-      let set = new Set(["a", 1]);
-      [...[set]::flatten()].should.deep.equal(["a", 1]);
     });
 
     it("should flatten set", function () {
@@ -58,18 +43,18 @@ describe("flatten()", function () {
     });
 
     it("should flatten a mix of types", function () {
-      let elements = [
+      const elements = [
         new Set(["a", 1]),
         [4,5,6],
         new Map([[1,"a"], [2, "b"]]),
         "cd"
       ];
-      let outcome = ["a", 1,4,5,6, [1,"a"],[2,"b"], "c","d"];
+      const outcome = ["a", 1,4,5,6, [1,"a"],[2,"b"], "c","d"];
       [...elements::flatten()].should.deep.equal(outcome);
     });
 
     it("should flatten generators", function () {
-      let generator = function* (){
+      const generator = function* (){
           yield 1;
           yield 2;
           yield 3;

@@ -5,7 +5,7 @@
  * flattenDeep(1) will have the same behavior as flatten().
  *
  * @this {Iterable<T>}
- * @param deepness sets the maximum level that the generator will iterate
+ * @param depth sets the maximum depth that the generator will iterate
  * @example Basic Usage
  *
  * ```javascript
@@ -13,15 +13,17 @@
  * ```
 */
 
-export function * flattenDeep (deepness : integer ) :
+export function * flattenDeep (depth : number ) :
   Iterable<T> {
-    let currentDeepness = deepness;
-    for (let x of this) {
-      if (typeof(x[Symbol.iterator]) == 'function' && currentDeepness) {
-        yield* x::flattenDeep(--currentDeepness);
-      } else {
-        yield x;
-      }
-      currentDeepness = deepness;
+    if ( depth < 0 ) {
+        yield this;
+        return;
     }
-  };
+    for ( let item of this ) {
+        if ( item[Symbol.iterator] ) {
+            yield * item::flattenDeep(depth - 1 );
+        } else {
+            yield item;
+        }
+    }
+};

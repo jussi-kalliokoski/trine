@@ -4,7 +4,7 @@ import { flattenDeep } from "../../../src/iterable/flattenDeep";
 
 describe("flattenDeep()", function(){
   it("should flatten a simple nested array", function(){
-    [...[[[1],[2]]]::flattenDeep(2)].should.deep.equal([1,2]);
+    [...[[1],[2]]::flattenDeep(1)].should.deep.equal([1,2]);
   });
 
   it("should flattenDeep to 1 level deep", function () {
@@ -32,7 +32,7 @@ describe("flattenDeep()", function(){
     }();
     [...[generator]::flattenDeep(1)].should.deep.equal([1,2,3]);
   });
-  
+
   it("should flatten generator with nesting", function () {
     let generator = function* (){
         yield [1,2];

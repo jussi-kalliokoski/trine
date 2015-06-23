@@ -11,9 +11,14 @@
  * ```
 */
 
-import { flattenDeep } from "./flattenDeep";
-
 export function * flatten() :
   Iterable<T> {
-    yield* this::flattenDeep(1);
-  }
+    for ( const item of this ) {
+        if ( item[Symbol.iterator] ) {
+            yield * item;
+        }
+        else {
+            yield item;
+        }
+    }
+}
