@@ -9,6 +9,7 @@ export class Module extends React.Component {
             if ( exp.type === "Function" ) {
                 return (<FunctionExport
                     key={exp.name}
+                    onCodeEditorOpened={this.props.onCodeEditorOpened}
                     function={exp}
                     categoryName={this.props.categoryName}
                     moduleName={this.props.module.module}
@@ -21,8 +22,8 @@ export class Module extends React.Component {
     render () {
         const id = "categories-" + this.props.categoryName + "-modules-" + this.props.module.module;
 
-        return (<section id={id}>
-            <h3>
+        return (<section id={id} className="module-section">
+            <h3 className="module-section__header">
                 <span>{ this.props.module.module }</span>
                 { " " }
                 <a className="anchor" href={"#" + id}>{"#"}</a>

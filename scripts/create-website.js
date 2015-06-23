@@ -4,4 +4,8 @@
 
 import { build } from "../tools/DocumentationBuilder";
 
-build();
+build().catch(function (error) {
+    setImmediate(function () {
+        throw error;
+    });
+});
