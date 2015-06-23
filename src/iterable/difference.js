@@ -3,7 +3,7 @@
 /**
  * Yields the sorted difference iterator of two sorted iterators.
  *
- * @this {Iterable<T>}
+ * @this {Iterable<Iterable<T>>}
  * @param comparator The sorting value function.
  * Should return `0` when items are equal, a positive number when the item
  * on the left is greater and a negative number when the item on the right is greater.
@@ -12,17 +12,22 @@
  * @example Basic Usage
  *
  * ```javascript
- * [1,2,4]::difference([2,3,4,5], function (b) {
+ * [[1,2,4], [2,3,4,5]]::difference(, function (b) {
  *   return this - b;
  * }); // yields 1,3,5
  * ```
 */
 export function * difference <T> (
-    b : Iterable<T>,
     comparator : (_this: T, item: T) => number,
 ) : Iterable<T> {
-    const iteratorA = this[Symbol.iterator]();
-    const iteratorB = b[Symbol.iterator]();
+    const iterators = [...this].map((item) => item[Symbol.iterator]());
+
+    if ( iterators.length !== 2 ) {
+        throw new Error("difference() takes two iterators, " +
+            iterators.length + " were passed");
+    }
+
+    const [iteratorA, iteratorB] = iterators;
     let stepA = iteratorA.next();
     let stepB = iteratorB.next();
 
