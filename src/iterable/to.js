@@ -21,6 +21,12 @@
  * })::to(Object); // returns { a: { id: "a" }, b: { id: "b"} }
  * ```
  *
+ * @example Strings
+ *
+ * ```javascript
+ * "foo".split("").reverse()::to(String) // "oof"
+ *
+ *
  * @example Other Collections
  *
  * ```javascript
@@ -37,6 +43,8 @@ export function to <iT, rT> (
     } else if ( Type === Object ) {
         return [...this].reduce((accumulation, entry) =>
             ({ ...accumulation, [entry[0]]: entry[1] }), {});
+    } else if ( Type === String ) {
+        return [...this].join("");
     } else {
         return new Type([...this]);
     }
