@@ -1,5 +1,3 @@
-"use strict";
-
 import { tan } from "../../../src/number/tan";
 
 describe("tan()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the n-th power of the number.
  *

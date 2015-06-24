@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Forks the iterator and yields the forks.
  *

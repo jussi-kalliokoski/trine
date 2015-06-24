@@ -1,5 +1,3 @@
-"use strict";
-
 import { sortBy } from "../../../src/iterable/sortBy";
 
 describe("sortBy()", function () {

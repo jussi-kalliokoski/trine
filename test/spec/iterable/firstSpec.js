@@ -1,5 +1,3 @@
-"use strict";
-
 import { first } from "../../../src/iterable/first";
 
 describe("first()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the items of the iterator in reverse order.
  *

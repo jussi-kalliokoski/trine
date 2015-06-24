@@ -1,5 +1,3 @@
-"use strict";
-
 import path from "path";
 import glob from "glob";
 import { writeFileSync as write, readFileSync as read } from "fs";
@@ -49,9 +47,8 @@ export async function build () {
     mkdir(docDir);
     mkdir(path.join(docDir, "latest"));
 
-    const trineRequireSource = `"use strict";
-
-const tree = new Map();
+    const trineRequireSource =
+`const tree = new Map();
 
 ${ glob.sync(path.join("*", "*.js"), { cwd: "src" }).map((path) => {
     return `tree.set("trine/${path.replace(/\.js$/, "")}", require("../src/${path}"));`;

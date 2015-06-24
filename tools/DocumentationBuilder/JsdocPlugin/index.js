@@ -1,5 +1,3 @@
-"use strict";
-
 import "pegjs-require";
 import { traverse } from "babel";
 import { parse } from "./parser";

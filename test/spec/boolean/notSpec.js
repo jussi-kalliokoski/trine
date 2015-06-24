@@ -1,5 +1,3 @@
-"use strict";
-
 import { not } from "../../../src/boolean/not";
 
 describe("not()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 import { entries } from "../../../src/object/entries";
 
 describe("entries()", function () {

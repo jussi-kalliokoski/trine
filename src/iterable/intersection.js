@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the sorted intersection iterator of two sorted iterators.
  *

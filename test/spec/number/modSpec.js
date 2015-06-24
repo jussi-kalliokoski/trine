@@ -1,5 +1,3 @@
-"use strict";
-
 import { mod } from "../../../src/number/mod";
 
 describe("mod()", function () {

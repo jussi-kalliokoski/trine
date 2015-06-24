@@ -1,5 +1,3 @@
-"use strict";
-
 import { add } from "../../../src/number/add";
 
 describe("add()", function () {

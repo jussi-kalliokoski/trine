@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * A pure JS alternative to the builtin sort - operates directly on iterators, so it can be advantageous to native sort in cases where
  * you only need a few of the sorted items, e.g. 15 first products sorted

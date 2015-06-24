@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the number of items in the iterator.
  *

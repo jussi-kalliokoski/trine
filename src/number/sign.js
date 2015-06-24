@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the sign of the number, indicating whether the number is positive, negative or zero.
  *

@@ -1,5 +1,3 @@
-"use strict";
-
 import { aggregate } from "./aggregate";
 import { last } from "./last";
 

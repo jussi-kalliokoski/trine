@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the first item that matches condition, and all the items after that.
  *

@@ -1,5 +1,3 @@
-"use strict";
-
 import { acos } from "../../../src/number/acos";
 
 describe("acos()", function () {

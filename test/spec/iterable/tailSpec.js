@@ -1,5 +1,3 @@
-"use strict";
-
 import { tail } from "../../../src/iterable/tail";
 
 describe("tail()", function () {

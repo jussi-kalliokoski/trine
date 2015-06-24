@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the items until an item that matches the condition is found.
  *

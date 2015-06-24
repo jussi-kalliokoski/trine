@@ -1,5 +1,3 @@
-"use strict";
-
 import { count } from "../../../src/iterable/count";
 
 describe("count()", function () {

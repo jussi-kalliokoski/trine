@@ -1,5 +1,3 @@
-"use strict";
-
 import { mul } from "../../../src/number/mul";
 
 describe("mul()", function () {

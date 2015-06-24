@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the sum of two numbers.
  *

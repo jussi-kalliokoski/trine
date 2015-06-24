@@ -1,5 +1,3 @@
-"use strict";
-
 import { sort } from "./sort";
 
 /**

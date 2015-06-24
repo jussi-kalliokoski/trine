@@ -1,5 +1,3 @@
-"use strict";
-
 import { values } from "../../../src/object/values";
 
 describe("values()", function () {

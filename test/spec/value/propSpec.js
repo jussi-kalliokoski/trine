@@ -1,5 +1,3 @@
-"use strict";
-
 import { prop } from "../../../src/value/prop";
 
 describe("prop()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 import { div } from "../../../src/number/div";
 
 describe("div()", function () {

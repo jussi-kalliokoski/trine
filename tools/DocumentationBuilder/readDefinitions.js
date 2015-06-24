@@ -1,5 +1,3 @@
-"use strict";
-
 import { parse, traverse } from "babel";
 import { augment } from "./JsdocPlugin";
 import { parse as parseMarkdown } from "marked";

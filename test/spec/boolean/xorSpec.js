@@ -1,5 +1,3 @@
-"use strict";
-
 import { xor } from "../../../src/boolean/xor";
 
 describe("xor()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 import { partial, _, ___ } from "../../../src/function/partial";
 
 function mock (...params) {

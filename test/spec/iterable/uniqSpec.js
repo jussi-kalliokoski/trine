@@ -1,5 +1,3 @@
-"use strict";
-
 import { uniq } from "../../../src/iterable/uniq";
 
 describe("uniq()", function () {

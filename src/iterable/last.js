@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the k-th item from the end of the iterator.
  *

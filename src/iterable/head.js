@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the k first items of the iterator.
  *

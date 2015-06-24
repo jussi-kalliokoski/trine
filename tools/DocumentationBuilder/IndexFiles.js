@@ -1,5 +1,3 @@
-"use strict";
-
 import { trackingCode } from "./trackingCode";
 
 export class IndexFiles {

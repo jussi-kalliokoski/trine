@@ -1,5 +1,3 @@
-"use strict";
-
 import { takeWhile } from "../../../src/iterable/takeWhile";
 
 describe("takeWhile()", function () {

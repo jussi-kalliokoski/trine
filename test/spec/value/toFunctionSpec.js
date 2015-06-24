@@ -1,5 +1,3 @@
-"use strict";
-
 import { toFunction } from "../../../src/value/toFunction";
 
 describe("toFunction()", function () {

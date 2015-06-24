@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the items of the iterator sorted by a given comparator.
  *

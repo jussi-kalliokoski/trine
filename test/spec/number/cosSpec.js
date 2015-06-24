@@ -1,5 +1,3 @@
-"use strict";
-
 import { cos } from "../../../src/number/cos";
 
 describe("cos()", function () {

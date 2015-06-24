@@ -1,5 +1,3 @@
-"use strict";
-
 import { keys } from "../../../src/object/keys";
 
 describe("keys()", function () {

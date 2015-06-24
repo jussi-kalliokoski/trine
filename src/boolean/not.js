@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the negation of the boolean.
  *

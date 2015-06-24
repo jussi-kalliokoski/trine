@@ -1,5 +1,3 @@
-"use strict";
-
 import { equals } from "../../../src/boolean/equals";
 
 describe("and()", function () {

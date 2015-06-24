@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the strict equality of the two operands.
  *

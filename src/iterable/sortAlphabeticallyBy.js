@@ -1,5 +1,3 @@
-"use strict";
-
 import { sortAlphabetically } from "./sortAlphabetically";
 import { map } from "./map";
 

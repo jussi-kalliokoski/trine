@@ -1,5 +1,3 @@
-"use strict";
-
 import { enumerate } from "../../../src/iterable/enumerate";
 
 describe("enumerate()", function () {

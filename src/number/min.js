@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the smaller of two numbers.
  *

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the items that qualify the condition.
  *

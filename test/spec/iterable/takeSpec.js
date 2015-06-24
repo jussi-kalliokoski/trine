@@ -1,5 +1,3 @@
-"use strict";
-
 import { take } from "../../../src/iterable/take";
 
 describe("take()", function () {

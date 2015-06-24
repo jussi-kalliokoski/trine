@@ -1,5 +1,3 @@
-"use strict";
-
 import { asin } from "../../../src/number/asin";
 
 describe("asin()", function () {

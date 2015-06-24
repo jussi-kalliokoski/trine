@@ -1,5 +1,3 @@
-"use strict";
-
 import { sortAlphabetically } from "../../../src/iterable/sortAlphabetically";
 
 describe("sortAlphabetically()", function () {

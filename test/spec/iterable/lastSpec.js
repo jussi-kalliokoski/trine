@@ -1,5 +1,3 @@
-"use strict";
-
 import { last } from "../../../src/iterable/last";
 
 describe("last()", function () {

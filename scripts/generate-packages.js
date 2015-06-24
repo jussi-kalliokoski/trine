@@ -1,7 +1,5 @@
 #!/usr/bin/env babel-node
 
-"use strict";
-
 import { readFileSync as read, writeFileSync as write } from "fs";
 
 const source = JSON.parse(read("package.json", "utf8"));

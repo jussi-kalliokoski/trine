@@ -1,5 +1,3 @@
-"use strict";
-
 import React from "react";
 import { trackingCode } from "./trackingCode";
 import { Docs } from "./components/Docs";

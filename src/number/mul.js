@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the multiplication of two numbers.
  *

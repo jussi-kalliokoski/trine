@@ -1,5 +1,3 @@
-"use strict";
-
 import { convolve } from "../../../src/iterable/convolve";
 
 describe("convolve()", function () {

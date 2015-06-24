@@ -1,5 +1,3 @@
-"use strict";
-
 import { sub } from "../../../src/number/sub";
 
 describe("sub()", function () {

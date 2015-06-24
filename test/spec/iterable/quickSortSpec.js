@@ -1,5 +1,3 @@
-"use strict";
-
 import { quickSort } from "../../../src/iterable/quickSort";
 
 describe("quickSort()", function () {

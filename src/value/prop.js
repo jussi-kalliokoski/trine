@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the value of the property by given key.
  *

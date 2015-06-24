@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the sine of the number.
  *

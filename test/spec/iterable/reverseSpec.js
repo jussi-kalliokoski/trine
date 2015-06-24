@@ -1,5 +1,3 @@
-"use strict";
-
 import { reverse } from "../../../src/iterable/reverse";
 
 describe("reverse()", function () {

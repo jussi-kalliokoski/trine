@@ -1,5 +1,3 @@
-"use strict";
-
 import { abs } from "../../../src/number/abs";
 
 describe("abs()", function () {

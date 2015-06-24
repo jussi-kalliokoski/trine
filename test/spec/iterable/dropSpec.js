@@ -1,5 +1,3 @@
-"use strict";
-
 import { drop } from "../../../src/iterable/drop";
 
 describe("drop()", function () {

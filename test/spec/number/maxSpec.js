@@ -1,5 +1,3 @@
-"use strict";
-
 import { max } from "../../../src/number/max";
 
 describe("max()", function () {

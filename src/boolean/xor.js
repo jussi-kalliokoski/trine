@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns true if one and only one of the conditions is true.
  *

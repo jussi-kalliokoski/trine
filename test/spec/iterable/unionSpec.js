@@ -1,5 +1,3 @@
-"use strict";
-
 import { union } from "../../../src/iterable/union";
 
 describe("union()", function () {

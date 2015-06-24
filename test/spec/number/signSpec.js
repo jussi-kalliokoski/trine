@@ -1,5 +1,3 @@
-"use strict";
-
 import { sign } from "../../../src/number/sign";
 
 describe("sign()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the absolute value of the number.
  *

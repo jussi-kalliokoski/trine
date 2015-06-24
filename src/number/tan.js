@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the tangent of the number.
  *

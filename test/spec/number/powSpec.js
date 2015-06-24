@@ -1,5 +1,3 @@
-"use strict";
-
 import { pow } from "../../../src/number/pow";
 
 describe("pow()", function () {

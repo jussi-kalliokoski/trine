@@ -1,5 +1,3 @@
-"use strict";
-
 import { to } from "../../../src/iterable/to";
 
 describe("to()", function () {

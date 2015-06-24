@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the items that aren't equal to the previous item based on a comparator.
  *

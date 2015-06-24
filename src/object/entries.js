@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the entries of the bound object.
  *

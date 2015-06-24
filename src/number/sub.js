@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the subtraction of two numbers.
  *

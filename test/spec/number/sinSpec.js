@@ -1,5 +1,3 @@
-"use strict";
-
 import { sin } from "../../../src/number/sin";
 
 describe("sin()", function () {

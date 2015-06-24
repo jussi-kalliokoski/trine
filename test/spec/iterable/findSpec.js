@@ -1,5 +1,3 @@
-"use strict";
-
 import { find } from "../../../src/iterable/find";
 
 describe("find()", function () {

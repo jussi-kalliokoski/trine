@@ -1,5 +1,3 @@
-"use strict";
-
 import { aggregate } from "../../../src/iterable/aggregate";
 
 function add (b) {

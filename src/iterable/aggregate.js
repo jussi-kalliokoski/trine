@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields all the accumulations of the iterator with a given accumulator method.
  *

@@ -1,5 +1,3 @@
-"use strict";
-
 import { difference } from "../../../src/iterable/difference";
 
 describe("difference()", function () {

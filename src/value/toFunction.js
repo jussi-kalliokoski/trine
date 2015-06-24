@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns a function that always returns the given value.
  *

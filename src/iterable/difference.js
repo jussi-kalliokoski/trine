@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the sorted difference iterator of two sorted iterators.
  *

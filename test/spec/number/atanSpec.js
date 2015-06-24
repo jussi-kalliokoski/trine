@@ -1,5 +1,3 @@
-"use strict";
-
 import { atan } from "../../../src/number/atan";
 
 describe("atan()", function () {

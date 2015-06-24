@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Yields the sorted union iterator of two sorted iterators.
  *

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the inverse cosine of the number.
  *

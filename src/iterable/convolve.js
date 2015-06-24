@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Maps the iterator with the additional tail of `k` previous items.
  * `k` is determined by the number of items in the accumulation iterator.

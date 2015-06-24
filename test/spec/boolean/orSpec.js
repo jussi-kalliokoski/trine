@@ -1,5 +1,3 @@
-"use strict";
-
 import { or } from "../../../src/boolean/or";
 
 describe("or()", function () {

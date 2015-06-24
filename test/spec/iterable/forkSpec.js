@@ -1,5 +1,3 @@
-"use strict";
-
 import { fork } from "../../../src/iterable/fork";
 
 describe("fork()", function () {

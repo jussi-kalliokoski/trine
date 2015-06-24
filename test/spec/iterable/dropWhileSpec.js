@@ -1,5 +1,3 @@
-"use strict";
-
 import { dropWhile } from "../../../src/iterable/dropWhile";
 
 describe("dropWhile()", function () {

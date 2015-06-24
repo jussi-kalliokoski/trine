@@ -1,5 +1,3 @@
-"use strict";
-
 import { parse } from "marked";
 import { trackingCode } from "./trackingCode";
 

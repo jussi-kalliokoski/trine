@@ -1,5 +1,3 @@
-"use strict";
-
 import { min } from "../../../src/number/min";
 
 describe("min()", function () {

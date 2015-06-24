@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Used for partial application to denote that this slot expects an
  * argument from the resulting function's calls.

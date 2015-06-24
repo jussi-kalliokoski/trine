@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Returns the division of two numbers.
  *

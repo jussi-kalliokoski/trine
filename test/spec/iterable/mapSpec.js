@@ -1,5 +1,3 @@
-"use strict";
-
 import { map } from "../../../src/iterable/map";
 
 describe("map()", function () {

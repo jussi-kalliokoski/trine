@@ -1,5 +1,3 @@
-"use strict";
-
 import "normalize.css";
 import "./styles/styles.css";
 import "highlight.js/styles/default.css";

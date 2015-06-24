@@ -1,5 +1,3 @@
-"use strict";
-
 import { reduce } from "../../../src/iterable/reduce";
 
 describe("reduce()", function () {

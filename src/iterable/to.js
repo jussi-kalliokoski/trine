@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Unwraps the iterator into a collection.
  *

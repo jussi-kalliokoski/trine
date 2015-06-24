@@ -1,5 +1,3 @@
-"use strict";
-
 require("source-map-support").install();
 
 var chai = require("chai");

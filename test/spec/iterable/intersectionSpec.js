@@ -1,5 +1,3 @@
-"use strict";
-
 import { intersection } from "../../../src/iterable/intersection";
 
 describe("intersection()", function () {

@@ -1,5 +1,3 @@
-"use strict";
-
 import { head } from "../../../src/iterable/head";
 
 describe("head()", function () {
