@@ -34,4 +34,12 @@ describe("to()", function () {
             [...set].should.deep.equal([1,2,3,4]);
         });
     });
+
+    describe("when called with String constructor", function () {
+        it("should return the values as a String", function () {
+            const string = ["a", "b", "c", "d"][Symbol.iterator]()::to(String);
+            string.should.be.a("string");
+            string.should.equal("abcd");
+        });
+    });
 });
