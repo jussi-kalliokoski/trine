@@ -20,12 +20,12 @@ describe("flattenDeep()", function(){
   });
 
   it("should flattenDeep set with nested array", function () {
-    let set = new Set(["a", [1,2,3]]);
+    const set = new Set(["a", [1,2,3]]);
     [...[set]::flattenDeep(2)].should.deep.equal(["a", 1,2,3]);
   });
 
   it("should flatten generators", function () {
-    let generator = function* (){
+    const generator = function* (){
         yield 1;
         yield 2;
         yield 3;
@@ -34,7 +34,7 @@ describe("flattenDeep()", function(){
   });
 
   it("should flatten generator with nesting", function () {
-    let generator = function* (){
+    const generator = function* (){
         yield [1,2];
         yield 3;
         yield 4;

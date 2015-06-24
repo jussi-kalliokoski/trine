@@ -38,7 +38,7 @@ describe("flatten()", function () {
     });
 
     it("should flatten set", function () {
-      let set = new Set(["a", [1,2,3]]);
+      const set = new Set(["a", [1,2,3]]);
       [...[set]::flatten()].should.deep.equal(["a", [1,2,3]]);
     });
 

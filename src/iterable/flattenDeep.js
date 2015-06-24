@@ -19,7 +19,7 @@ export function * flattenDeep (depth : number ) :
         yield this;
         return;
     }
-    for ( let item of this ) {
+    for ( const item of this ) {
         if ( item[Symbol.iterator] ) {
             yield * item::flattenDeep(depth - 1 );
         } else {
