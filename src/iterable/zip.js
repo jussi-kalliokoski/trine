@@ -1,12 +1,8 @@
-"use strict";
-
-import {map} from './map'
-
 /**
  * unpacks an Iterable of Iterables and yields an array of items
  *
- * @this {Iterable<any>}
- * @ntime O(n)
+ * @this {Iterable<Iterable<T>>}
+ * @ntime O(nm)
  * @dspace O(n)
  * @example Basic Usage
  *
@@ -15,22 +11,18 @@ import {map} from './map'
  * ```
 */
 
-function generatorify(){
-    if( Array.isArray(this) ) {
-        return this[Symbol.iterator]();
-    }
-    return this;
-}
-
 export function * zip  () : Iterable<any> {
-  let iterators = [...this::map(generatorify)];
-  do {
-        let zipped=[];
-        for(let iter of iterators) {
-          let obj = iter.next();
-          if( obj.done ) { return; }
-          zipped.push(obj.value);
+    let iterators = [...this].map( (iterable) => 
+        iterable[Symbol.iterator]() 
+    );    
+    if ( iterators.length == 0 ) { return; }
+    while ( true ) {
+        let zipped = [];
+        for ( let iterator of iterators ) {
+            const {value, done} = iterator.next();
+            if ( done ) { return; }
+            zipped.push(value);
         }
         yield zipped;
-    } while(true);
+    }
 };
