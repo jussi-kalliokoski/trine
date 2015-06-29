@@ -21,10 +21,6 @@ export function * flattenDeep <T> (
         return;
     }
     for ( const item of this ) {
-        if ( item[Symbol.iterator] ) {
-            yield * item::flattenDeep(depth - 1 );
-        } else {
-            yield item;
-        }
+        yield * item::flattenDeep( depth - 1 );
     }
 };
