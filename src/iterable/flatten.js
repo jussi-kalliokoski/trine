@@ -11,8 +11,9 @@
  * ```
 */
 
-export function * flatten() :
-  Iterable<T> {
+export function * flatten <T> (
+
+) : Iterable<T> {
     for ( const item of this ) {
         if ( item[Symbol.iterator] ) {
             yield * item;

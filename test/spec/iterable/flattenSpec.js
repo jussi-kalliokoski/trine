@@ -16,7 +16,7 @@ describe("flatten()", function () {
     });
 
     it("should flatten a mix of arrays and values", function () {
-      [...[[1,2], [1],3]::flatten()].should.deep.equal([1,2,1,3]);
+      [...[[1,2],[1],3]::flatten()].should.deep.equal([1,2,1,3]);
     });
 
     it("shouldn't flatten more than 1 level deep", function () {
@@ -34,7 +34,7 @@ describe("flatten()", function () {
 
     it("should flatten map", function () {
       const map = new Map([[1,"a"], [2, "b"]]);
-      [...[map]::flatten()].should.deep.equal([[1,"a"],[2,"b"]]);
+      [...[map]::flatten()].should.deep.equal([[1,"a"], [2,"b"]]);
     });
 
     it("should flatten set", function () {
@@ -49,12 +49,12 @@ describe("flatten()", function () {
         new Map([[1,"a"], [2, "b"]]),
         "cd"
       ];
-      const outcome = ["a", 1,4,5,6, [1,"a"],[2,"b"], "c","d"];
+      const outcome = ["a", 1,4,5,6, [1,"a"], [2,"b"], "c","d"];
       [...elements::flatten()].should.deep.equal(outcome);
     });
 
     it("should flatten generators", function () {
-      const generator = function* (){
+      const generator = function * (){
           yield 1;
           yield 2;
           yield 3;

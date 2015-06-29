@@ -4,7 +4,7 @@
  * Yields a flatten array where the deep level is specified.
  * flattenDeep(1) will have the same behavior as flatten().
  *
- * @this {Iterable<T>}
+ * @this {Iterable}
  * @param depth sets the maximum depth that the generator will iterate
  * @example Basic Usage
  *
@@ -13,8 +13,9 @@
  * ```
 */
 
-export function * flattenDeep (depth : number ) :
-  Iterable<T> {
+export function * flattenDeep <T> (
+  depth : number
+) : Iterable<T> {
     if ( depth < 0 ) {
         yield this;
         return;
