@@ -14,12 +14,13 @@
 */
 
 export function * flattenDeep <T> (
-  depth : number
+    depth : number
 ) : Iterable<T> {
     if ( depth < 0 ) {
         yield this;
         return;
     }
+
     for ( const item of this ) {
         yield * item::flattenDeep( depth - 1 );
     }
