@@ -36,14 +36,15 @@
 export function to <iT, rT> (
     Type : Function,
 ) : rT {
-    if ( Type === Array ) {
-        return [...this];
-    } else if ( Type === Object ) {
-        return [...this].reduce((accumulation, entry) =>
-            ({ ...accumulation, [entry[0]]: entry[1] }), {});
-    } else if ( Type === String ) {
-        return [...this].join("");
-    } else {
-        return new Type([...this]);
+    switch ( Type ) {
+        case Array:
+            return [...this];
+        case Object:
+            return [...this].reduce((accumulation, entry) =>
+                ({ ...accumulation, [entry[0]]: entry[1] }), {});
+        case String:
+            return [...this].join("");
+        default:
+            return new Type([...this]);
     }
 };
