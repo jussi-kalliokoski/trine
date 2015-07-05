@@ -11,16 +11,9 @@
 export function * repeat <T> (
 
 ) : Iterable<T> {
-    let iterator = this[Symbol.iterator]();
+    const items = [...this];
 
     while ( true ) {
-        const { value, done } = iterator.next();
-
-        if ( done ) {
-            // Start the iterator over again once done.
-            iterator = this[Symbol.iterator]();
-        } else {
-            yield value;
-        }
+        yield * items;
     }
 };
