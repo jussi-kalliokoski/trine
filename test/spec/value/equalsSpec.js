@@ -1,6 +1,6 @@
-import { equals } from "../../../src/boolean/equals";
+import { equals } from "../../../src/value/equals";
 
-describe("and()", function () {
+describe("equals()", function () {
     describe("when the values are equal", function () {
         it("should return true", function () {
             "foo"::equals("foo").should.equal(true);
