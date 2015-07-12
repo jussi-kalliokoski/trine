@@ -3,7 +3,7 @@
  *
  * @this {Iterable<Iterable<T>>}
  * @ntime O(nm)
- * @dspace O(n)
+ * @dspace O(m)
  * @example Basic Usage
  *
  * ```javascript
@@ -12,14 +12,14 @@
 */
 
 export function * zip  () : Iterable<any> {
-    let iterators = [...this].map( (iterable) => 
-        iterable[Symbol.iterator]() 
-    );    
+    let iterators = [...this].map(
+        (iterable) => iterable[Symbol.iterator]()
+    );
     if ( iterators.length == 0 ) { return; }
     while ( true ) {
         let zipped = [];
         for ( let iterator of iterators ) {
-            const {value, done} = iterator.next();
+            const { value, done } = iterator.next();
             if ( done ) { return; }
             zipped.push(value);
         }
