@@ -18,6 +18,6 @@ export function * map <iT, rT> (
     transformer : (_this : iT) => rT,
 ) : Iterable<rT> {
     for ( const item of this ) {
-        yield item::transformer();
+        yield item::transformer(item);
     }
 };
