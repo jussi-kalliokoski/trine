@@ -1,10 +1,10 @@
-import { fork } from "../../../src/iterable/fork";
+import { tee } from "../../../src/iterable/tee";
 
-describe("fork()", function () {
+describe("tee()", function () {
     it("should buffer up the elements of the iterator" +
     " so that all the resulting iterators give the same results", function () {
         const source = [1,2,3][Symbol.iterator]();
-        const forks = source::fork();
+        const forks = source::tee();
         const a = forks.next().value;
         const b = forks.next().value;
         const c = forks.next().value;
@@ -26,7 +26,7 @@ describe("fork()", function () {
     describe("when called after iteration has started", function () {
         it("should throw", function () {
             const source = [1,2,3][Symbol.iterator]();
-            const forks = source::fork();
+            const forks = source::tee();
             const a = forks.next().value;
             a.next();
 

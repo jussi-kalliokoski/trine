@@ -1,19 +1,19 @@
 /**
- * Forks the iterator and yields the forks.
+ * Yields forks of the original iterator, caching the items as needed.
  *
  * @this {Iterable<T>}
  * @example Basic Usage
  *
  * ```javascript
  * const source = [1,2,3]::map(function () { return this * 2});
- * const forks = source::fork();
+ * const forks = source::tee();
  * const a = forks.next().value;
  * const b = forks.next().value;
  * [...a] // [1,2,3]
  * [...b] // [1,2,3]
  * ```
 */
-export function * fork <T> (
+export function * tee <T> (
 
 ) : Iterable<Iterable<T>> {
     const source = this[Symbol.iterator]();
@@ -24,7 +24,7 @@ export function * fork <T> (
 
     while ( true ) {
         if ( readIndex > 0 ) {
-            throw new TypeError("Can't fork the iterator after the iteration has started");
+            throw new TypeError("Can't tee the iterator after the iteration has started");
         }
 
         const iteratorIndex = indices.length;
