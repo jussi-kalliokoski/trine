@@ -26,7 +26,7 @@ body {
 <p><a href="https://travis-ci.org/jussi-kalliokoski/trine"><img src="https://travis-ci.org/jussi-kalliokoski/trine.svg?branch=master" alt="Build Status"></a>
 <a href="https://coveralls.io/r/jussi-kalliokoski/trine"><img src="https://img.shields.io/coveralls/jussi-kalliokoski/trine.svg" alt="Coverage Status"></a></p>
 <blockquote>
-<p>The library modern JavaScript doesn&#39;t deserve, but needs right now.</p>
+<p>A utility library for modern JavaScript.</p>
 </blockquote>
 <p>Trine is a utility library geared at tapping the full potential of functional programming in JS, in the vein of <a href="https://lodash.com/">lodash</a>, <a href="http://underscorejs.org/">underscore</a> and <a href="http://ramdajs.com/">Ramda</a>.</p>
 <p>See the <a href="http://jussi-kalliokoski.github.io/trine/docs/latest">latest docs/documentation</a> for a full API reference.</p>
@@ -85,17 +85,19 @@ function * primes () {
     }
 }
 
-const commonItems = fibonacci()
-    ::intersection(primes(), sub)
+const commonItems = [fibonacci(), primes()]
+    ::intersection(sub)
     ::head(5)
     ::to(Array);
 console.log(commonItems); // logs [1, 2, 3, 5, 13]
 </code></pre>
 <p>Using iterators also allows us to easily timebox even synchronous operations. Let&#39;s say we wanted to get the 1000 first common items, but we&#39;d be ok with less if it would block for too long:</p>
 <pre><code class="lang-javascript">const deadline = Date.now() + 1000;
-const commonItems = fibonacci()
-    ::takeWhile(() =&gt; Date.now() &lt; deadline)
-    ::intersection(primes(), sub)
+const commonItems = [
+    fibonacci()::takeWhile(() =&gt; Date.now() &lt; deadline),
+    primes(),
+]
+    ::intersection(sub)
     ::head(1000)
     ::to(Array);
 
@@ -134,9 +136,8 @@ const firstPageItems = products
 <p>Trine has been designed to be modular and decoupled from the ground up. Each exposed function is in its own module, so for example if you&#39;re using Webpack, instead of a huge library, you will only be transferring the needed functions to the client.</p>
 <h2 id="installation">Installation</h2>
 <p>Trine is available on <a href="https://www.npmjs.com/">npm</a>:</p>
-<pre><code>npm install --save trine babel-runtime
-</code></pre><p>At the moment, Trine requires you to also install the <code>babel-runtime</code> package, and depending on your usage, probably also some polyfills.</p>
-<h2 id="license">License</h2>
+<pre><code>npm install --save trine
+</code></pre><h2 id="license">License</h2>
 <p>Trine is ISC licensed. See the <a href="https://github.com/jussi-kalliokoski/trine/blob/master/LICENSE">LICENSE</a> document for more information.</p>
 <h2 id="contributing">Contributing</h2>
 <p>The <a href="https://github.com/jussi-kalliokoski/trine/issues">issues</a> are a good place to start. Whether you&#39;re having a bug or fix one, have a knack for design and want to improve the appeal of Trine, want to improve the documentation, add a test case, propose a feature or just ask for help, please do. All (friendly) contributions are welcome, as long as they&#39;re not malicious.</p>
