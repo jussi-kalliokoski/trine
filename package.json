@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "prepublish": "./scripts/build.bash",
+    "publish-packages": "./scripts/publish-packages.bash",
     "generate-packages": "./scripts/generate-packages.js",
     "testsuite": "./scripts/testsuite.bash",
     "test": "./scripts/test.bash",
