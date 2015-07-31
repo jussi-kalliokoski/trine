@@ -15,5 +15,5 @@
 export function xor (
     right : boolean,
 ) : boolean {
-    return Boolean(Number(this) ^ Number(right));
+    return this !== right;
 };
