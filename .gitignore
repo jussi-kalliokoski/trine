@@ -4,5 +4,6 @@ node_modules
 /function
 /iterable
 /number
+/object
 /value
 /dist
