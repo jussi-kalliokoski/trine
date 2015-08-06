@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 - Ballerina Condor
+
+* Include `object` category in the package. @tomekwi.
+* Use inequality check for `boolean/xor`. @edge.
+* Documentation improvements / fixes. @tomekwi.
+
 ## v0.1.0 - Ballistic Beluga
 
 * Added `object/{entries,values,keys}`. @nikhedonia.
