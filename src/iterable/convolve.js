@@ -10,7 +10,7 @@
  * @example Basic Usage
  *
  * ```javascript
- * [1,2,3].convolve(function (tail) {
+ * [1,2,3]::convolve(function (tail) {
  *   return [...tail, this].reduce(add);
  * }, [0, -1]) // yields 0, 3, 6
  * ```
