@@ -26,6 +26,7 @@
     "function",
     "iterable",
     "number",
+    "object",
     "value"
   ],
   "dependencies": {
