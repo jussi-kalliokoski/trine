@@ -13,3 +13,4 @@ babel-node node_modules/.bin/isparta cover \
     "$test_directory/_init.js" \
     "$test_directory/spec/**/*Spec.js" \
 
+karma start --single-run

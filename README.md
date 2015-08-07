@@ -4,6 +4,11 @@
 
 [![Build Status](https://travis-ci.org/jussi-kalliokoski/trine.svg?branch=master)](https://travis-ci.org/jussi-kalliokoski/trine)
 [![Coverage Status](https://img.shields.io/coveralls/jussi-kalliokoski/trine.svg)](https://coveralls.io/r/jussi-kalliokoski/trine)
+![Firefox: latest](https://img.shields.io/badge/Firefox-latest-e66000.svg)
+![Chrome: latest](https://img.shields.io/badge/Chrome-latest-0080ce.svg)
+![Opera: latest](https://img.shields.io/badge/Opera-latest-cc0f16.svg)
+![Safari: latest](https://img.shields.io/badge/Safari-latest-b3b3b3.svg)
+![IE: 10+](https://img.shields.io/badge/IE-10%2B-1ebbee.svg)
 
 > A utility library for modern JavaScript.
 
@@ -162,3 +167,7 @@ Trine is ISC licensed. See the [LICENSE](https://github.com/jussi-kalliokoski/tr
 ## Contributing
 
 The [issues](https://github.com/jussi-kalliokoski/trine/issues) are a good place to start. Whether you're having a bug or fix one, have a knack for design and want to improve the appeal of Trine, want to improve the documentation, add a test case, propose a feature or just ask for help, please do. All (friendly) contributions are welcome, as long as they're not malicious.
+
+## Special Thanks
+
+To all the [contributors](https://github.com/jussi-kalliokoski/trine/graphs/contributors), as well as [BrowserStack](https://www.browserstack.com/) for providing free automated browser tests for the project.
