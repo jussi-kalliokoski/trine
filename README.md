@@ -162,3 +162,10 @@ Trine is ISC licensed. See the [LICENSE](https://github.com/jussi-kalliokoski/tr
 ## Contributing
 
 The [issues](https://github.com/jussi-kalliokoski/trine/issues) are a good place to start. Whether you're having a bug or fix one, have a knack for design and want to improve the appeal of Trine, want to improve the documentation, add a test case, propose a feature or just ask for help, please do. All (friendly) contributions are welcome, as long as they're not malicious.
+
+## Similar / Compatible / Complementary Libraries
+
+* [curry-this](https://github.com/stoeffel/curry-this) - currying made simple. Works with the function bind syntax.
+* [this-is-truthy](https://github.com/tomekwi/this-is-truthy) - Check if `this` is truthy.
+* [mori-ext](https://github.com/roobie/mori-ext) - Function bind syntax wrappers for mori.
+* Got another one? Don't be shy, add it here!
