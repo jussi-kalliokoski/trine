@@ -6,8 +6,8 @@ docblock
     {
         var docblock = {
             type: "Docblock",
-            start: offset(),
-            end: offset() + text().length,
+            start: location(),
+            end: location() + text().length,
             description: description,
             thisParameter: null,
             examples: [],
@@ -28,7 +28,7 @@ docblock
                     return parameter.name.name === instruction.name.name;
                 }) ) {
                     var error = new Error("Duplicate @type `" + instruction.name.name + "`");
-                    error.offset = instruction.start;
+                    error.location = instruction.start;
                     throw error;
                 }
 
@@ -39,7 +39,7 @@ docblock
                     return parameter.name.name === instruction.name.name;
                 }) ) {
                     var error = new Error("Duplicate @param `" + instruction.name.name + "`");
-                    error.offset = instruction.start;
+                    error.location = instruction.start;
                     throw error;
                 }
 
@@ -48,7 +48,7 @@ docblock
             case "ThisInstruction":
                 if ( docblock.thisParameter ) {
                     var error = new Error("Duplicate @this instruction");
-                    error.offset = instruction.start;
+                    error.location = instruction.start;
                     throw error;
                 }
 
@@ -57,7 +57,7 @@ docblock
             case "NtimeInstruction":
                 if ( docblock.timeComplexity ) {
                     var error = new Error("Duplicate @ntime instruction");
-                    error.offset = instruction.start;
+                    error.location = instruction.start;
                     throw error;
                 }
 
@@ -66,7 +66,7 @@ docblock
             case "DspaceInstruction":
                 if ( docblock.spaceComplexity ) {
                     var error = new Error("Duplicate @dspace instruction");
-                    error.offset = instruction.start;
+                    error.location = instruction.start;
                     throw error;
                 }
 
@@ -94,8 +94,8 @@ markdown_block
     = lines:markdown_line+
     { return {
         type: "MarkdownBlock",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         content: lines.join("\n").replace(/\n+/g, function (linebreaks) {
             if ( linebreaks.length === 1 ) { return " "; }
             return linebreaks;
@@ -123,8 +123,8 @@ example_instruction
     = leading_star "@example" " " title:$([^\n]+) "\n" content:example_content+
     { return {
         type: "ExampleInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         title: title,
         content: content.filter(function (block) {
             return block.type !== "MarkdownBlock" || block.content !== "";
@@ -139,8 +139,8 @@ type_instruction
     = leading_star "@type" " " name:identifier description:instruction_description
     { return {
         type: "TypeInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         name: name,
         description: description,
     } }
@@ -152,8 +152,8 @@ this_instruction
     )? description:instruction_description
     { return {
         type: "ThisInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         typeAnnotation: typeAnnotation,
         description: description,
     } }
@@ -162,8 +162,8 @@ param_instruction
     = leading_star "@param" " " name:identifier description:instruction_description
     { return {
         type: "ParamInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         name: name,
         description: description,
     } }
@@ -172,8 +172,8 @@ dspace_instruction
     = leading_star "@dspace" " " value:$([^\n]+) "\n"
     { return {
         type: "DspaceInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         value: value,
     } }
 
@@ -181,8 +181,8 @@ ntime_instruction
     = leading_star "@ntime" " " value:$([^\n]+) "\n"
     { return {
         type: "NtimeInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         value: value,
     } }
 
@@ -190,8 +190,8 @@ unknown_instruction
     = leading_star "@" name:identifier content:instruction_description
     { return {
         type: "UnknownInstruction",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         name: name,
         content: content,
     } }
@@ -204,8 +204,8 @@ type_annotation "TypeAnnotation"
     = "{" " "* type:$([^\}]+) " "* "}"
     { return {
         type: "TypeAnnotation",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         value: type,
     } }
 
@@ -226,8 +226,8 @@ identifier "Identifier"
     = name:$([a-zA-Z_] [a-zA-Z_0-9]*)
     { return {
         type: "Identifier",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         name: name,
     } }
 
@@ -235,8 +235,8 @@ code_block "CodeBlock"
     = leading_star "```" lang:identifier? "\n" code:code code_block_end
     { return {
         type: "CodeBlock",
-        start: offset(),
-        end: offset() + text().length,
+        start: location(),
+        end: location() + text().length,
         lang: lang,
         code: code,
     } }
