@@ -168,4 +168,6 @@ The [issues](https://github.com/jussi-kalliokoski/trine/issues) are a good place
 * [curry-this](https://github.com/stoeffel/curry-this) - currying made simple. Works with the function bind syntax.
 * [this-is-truthy](https://github.com/tomekwi/this-is-truthy) - Check if `this` is truthy.
 * [mori-ext](https://github.com/roobie/mori-ext) - Function bind syntax wrappers for mori.
+* [bind-first](https://github.com/stoeffel/bind-first) - Make data-first functions work with Trine like a charm.
+* [bind-last](https://github.com/stoeffel/bind-last) - Make data-last functions work with Trine like a charm.
 * Got another one? Don't be shy, add it here!
