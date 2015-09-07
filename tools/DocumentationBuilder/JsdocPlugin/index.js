@@ -42,7 +42,7 @@ function findDocblock (node, source, filename) {
         offsetPositions(docblock, docblockStart);
         return docblock;
     } catch ( error ) {
-        throw new Error(error.message + " " + getDebugString(source, filename, docblockStart + error.offset));
+        throw new Error(error.message + " " + getDebugString(source, filename, docblockStart + error.location));
     }
 }
 
