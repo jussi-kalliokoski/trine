@@ -70,7 +70,6 @@ function * fibonacci () {
 
 function * primes () {
     const primes = new Set();
-    yield 1;
     yield 2;
 
     loop: for ( let i = 3; true; i += 2 ) {
@@ -87,7 +86,7 @@ const commonItems = [fibonacci(), primes()]
     ::intersection(sub)
     ::head(5)
     ::to(Array);
-console.log(commonItems); // logs [1, 2, 3, 5, 13]
+console.log(commonItems); // logs [2, 3, 5, 13, 89]
 ```
 
 Using iterators also allows us to easily timebox even synchronous operations. Let's say we wanted to get the 1000 first common items, but we'd be ok with less if it would block for too long:
