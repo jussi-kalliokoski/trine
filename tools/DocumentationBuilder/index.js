@@ -54,9 +54,17 @@ ${ glob.sync(path.join("*", "*.js"), { cwd: "src" }).map((path) => {
     return `tree.set("trine/${path.replace(/\.js$/, "")}", require("../src/${path}"));`;
 }).join("\n") }
 
+function splitModule (modulePath) {
+    const split = modulePath.split(/\\./g);
+    if ( split.length !== 3 ) { return modulePath; }
+    return split.join("/");
+}
+
 export function trineRequire (modulePath) {
     if ( tree.has(modulePath) ) {
         return tree.get(modulePath);
+    } else if ( tree.has(splitModule(modulePath)) ) {
+        return tree.get(splitModule(modulePath));
     } else {
         throw new Error("Module not found:" + modulePath);
     }

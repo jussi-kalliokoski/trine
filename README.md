@@ -144,7 +144,23 @@ function getItemPriceById (id) {
 
 ## Modules
 
-Trine has been designed to be modular and decoupled from the ground up. Each exposed function is in its own module, so for example if you're using Webpack, instead of a huge library, you will only be transferring the needed functions to the client.
+Trine has been designed to be modular and decoupled from the ground up. Each exposed function is in its own module, so for example if you're using Webpack, instead of a huge library, you will only be transferring the needed functions to the client. For example:
+
+```javascript
+import { add } from "trine/number/add";
+```
+
+Trine is also published as separate packages on npm to make the fingerprint smaller also when using node. The naming convention is using a similar scheme, except that slashes (`/`) are replaced with dots (`.`):
+
+```
+npm install --save trine.number.add
+```
+
+```javascript
+import { add } from "trine.number.add";
+```
+
+This is the recommended way of using Trine.
 
 ## Installation
 
