@@ -29,8 +29,10 @@
     "object",
     "value"
   ],
+  "main": "src",
   "dependencies": {
-    "babel-runtime": "^5.5.6"
+    "babel-runtime": "^5.5.6",
+    "glob": "^5.0.10"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -42,7 +44,6 @@
     "codemirror": "^5.3.0",
     "coveralls": "^2.11.2",
     "css-loader": "^0.15.1",
-    "glob": "^5.0.10",
     "highlight.js": "^8.6.0",
     "isparta": "^3.0.3",
     "jscs": "^2.0.0",
