@@ -15,5 +15,5 @@
 export function and (
     right : boolean,
 ) : boolean {
-    return this && right;
+    return Boolean(this) && Boolean(right);
 };

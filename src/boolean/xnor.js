@@ -1,5 +1,5 @@
 /**
- * Returns true if and only if one operand is true.
+ * Returns true if both operands are true or both operands are false.
  *
  * @this {boolean} Left boolean operand.
  * @param right Right boolean operand.
@@ -12,8 +12,8 @@
  * false::xor(false) // false
  * ```
 */
-export function xor (
+export function xnor (
     right : boolean,
 ) : boolean {
-    return Boolean(this) !== Boolean(right);
+    return Boolean(this) === Boolean(right);
 };
