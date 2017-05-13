@@ -1,5 +1,5 @@
 /**
- * Returns true if one and only one of the conditions is true.
+ * Returns true if and only if one operand is true.
  *
  * @this {boolean} Left boolean operand.
  * @param right Right boolean operand.
@@ -15,5 +15,5 @@
 export function xor (
     right : boolean,
 ) : boolean {
-    return this !== right;
+    return Boolean(this) !== Boolean(right);
 };

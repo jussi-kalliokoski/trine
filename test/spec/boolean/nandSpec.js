@@ -1,27 +1,27 @@
-import { xor } from "../../../src/boolean/xor";
+import { nand } from "../../../src/boolean/nand";
 
-describe("xor()", function () {
+describe("nand()", function () {
     describe("with true and true", function () {
         it("should return false", function () {
-            true::xor(true).should.equal(false);
+            true::nand(true).should.equal(false);
         });
     });
 
     describe("with true and false", function () {
         it("should return true", function () {
-            true::xor(false).should.equal(true);
+            true::nand(false).should.equal(true);
         });
     });
 
     describe("with false and true", function () {
         it("should return true", function () {
-            false::xor(true).should.equal(true);
+            false::nand(true).should.equal(true);
         });
     });
 
     describe("with false and false", function () {
-        it("should return false", function () {
-            false::xor(false).should.equal(false);
+        it("should return true", function () {
+            false::nand(false).should.equal(true);
         });
     });
 });

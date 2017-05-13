@@ -1,5 +1,5 @@
 /**
- * Returns true if either of the operands is true.
+ * Returns true if either operand is true.
  *
  * @this {boolean} Left boolean operand.
  * @param right Right boolean operand.
@@ -15,5 +15,5 @@
 export function or (
     right : boolean,
 ) : boolean {
-    return this || right;
+    return Boolean(this) || Boolean(right);
 };

@@ -15,7 +15,7 @@ function countPlaceholders () {
 }
 
 function flatMap (transformer) {
-    return [].concat.apply([], this.map(transformer));
+    return Array.prototype.concat.apply([], this.map(transformer));
 }
 
 /**
