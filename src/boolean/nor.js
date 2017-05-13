@@ -6,10 +6,10 @@
  * @example Basic Usage
  *
  * ```javascript
- * true::or(true) // false
- * true::or(false) // false
- * false::or(true) // false
- * false::or(false) // true
+ * true::nor(true) // false
+ * true::nor(false) // false
+ * false::nor(true) // false
+ * false::nor(false) // true
  * ```
 */
 export function nor (

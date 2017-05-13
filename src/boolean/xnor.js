@@ -6,10 +6,10 @@
  * @example Basic Usage
  *
  * ```javascript
- * true::xor(true) // false
- * true::xor(false) // true
- * false::xor(true) // true
- * false::xor(false) // false
+ * true::xnor(true) // false
+ * true::xnor(false) // true
+ * false::xnor(true) // true
+ * false::xnor(false) // false
  * ```
 */
 export function xnor (
