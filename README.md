@@ -169,4 +169,5 @@ The [issues](https://github.com/jussi-kalliokoski/trine/issues) are a good place
 * [mori-ext](https://github.com/roobie/mori-ext) - Function bind syntax wrappers for mori.
 * [iterable-some](https://github.com/tomekwi/iterable-some) - `Array.some` for iterables.
 * [this-drop](https://github.com/studio-b12/this-drop) - Get the `this` object stripped of some properties.
+* [seq](https://github.com/njlr/seq) - Sequence transformations (map, flatMap, filter, etc.) as pure functions. Uses pipeline operator for chaining. 
 * Got another one? Don't be shy, add it here!
